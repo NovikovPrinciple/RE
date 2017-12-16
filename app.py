@@ -109,15 +109,12 @@ with open('static/stats1-1.csv', 'rb') as csvfile:
     columns, rows = translate(column_letter, row_number)
     
     
-    
-def translate(columns, rows):
-    for i in range(0, len(columns)):
-        columns[i] = column_translate[columns[i]]
-        
-    for i in range(0, len(rows)):
-        rows[i] = row_translate[rows[i]]
-        
-    return columns, rows
+convoy_rows = []
+with open('static/convoy.csv', 'rb') as csvfile2:
+    rowreader2 = csv.reader(csvfile2)
+    rowreader2.next()
+    for row in rowreader2:
+        convoy_rows.append(row)
     
 
 @app.route('/')
@@ -127,7 +124,8 @@ def index():
     
 @app.route('/convoy')
 def show_convoy():
-    return 'This is where the convoy will be :)'
+    return render_template( 'convoy.html',
+                            ROWS=convoy_rows)
     
 @app.route('/shop')
 def show_shop():
@@ -135,7 +133,7 @@ def show_shop():
     
 @app.route('/map')
 def show_map():
-    return render_template('map.html', 
+    return render_template( 'map.html', 
                             map='Extra rescaled.png',
                             character_list=name_list,
                             sprite=sprite_list,

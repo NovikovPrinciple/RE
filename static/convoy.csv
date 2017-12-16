@@ -1,0 +1,29 @@
+Item,Type,Attack Stat,Rank,Might,Hit,Crit,Crit % Modifier,Crit Dmg Modifier,Avo,CEva,Range,Effective,Effective,ESpd(Off),ESpd(Def),Gems,Reverse WT?,Double WT?,Ineffective?,Cost,Effect
+Training Sword,Sword,Str,E,4,90,0,1,2,0,15,1,,,0,0,2,FALSE,FALSE,FALSE,500,Doubles WEXP gains
+Training Lance,Lance,Str,E,3,80,0,1,2,0,15,1,,,0,0,2,FALSE,FALSE,FALSE,500,Doubles WEXP Gains
+Training Lance,Lance,Str,E,3,80,0,1,2,0,15,1,,,0,0,2,FALSE,FALSE,FALSE,500,Doubles WEXP Gains
+Training Axe,Axe,Str,E,4,90,0,0,2,0,15,1,,,0,0,2,FALSE,FALSE,FALSE,500,Doubles WEXP gains
+Training Tome ,Tome,Mag,E,3,80,0,1,2,0,15,1 ~ 2,,,0,0,2,FALSE,FALSE,FALSE,500,Doubles WEXP gains
+Training Knife,Knife,Str,E,2,90,0,1,2,0,15,1 ~ 2,,,0,0,2,FALSE,FALSE,FALSE,500,Doubles WEXP gains. -1 Str/Mag on hit
+Training Knife,Knife,Str,E,2,90,0,1,2,0,15,1 ~ 2,,,0,0,2,FALSE,FALSE,FALSE,500,Doubles WEXP gains. -1 Str/Mag on hit
+Training Knife,Knife,Str,E,2,90,0,1,2,0,15,1 ~ 2,,,0,0,2,FALSE,FALSE,FALSE,500,Doubles WEXP gains. -1 Str/Mag on hit
+Training Bow ,Bow,Str,E,4,80,0,0,2,0,15,2,Flying,,0,0,2,FALSE,FALSE,FALSE,500,Doubles WEXP Gains
+Training Bow ,Bow,Str,E,4,80,0,0,2,0,15,2,Flying,,0,0,2,FALSE,FALSE,FALSE,500,Doubles WEXP Gains
+Training Bow ,Bow,Str,E,4,80,0,0,2,0,15,2,Flying,,0,0,2,FALSE,FALSE,FALSE,500,Doubles WEXP Gains
+Vulnerary(3),Item,3,,,,,,,,,,,,,,,,,,300,Heals 10 HP.
+Vulnerary(3),Item,3,,,,,,,,,,,,,,,,,,300,Heals 10 HP.
+Vulnerary(3),Item,3,,,,,,,,,,,,,,,,,,300,Heals 10 HP.
+Vulnerary(3),Item,3,,,,,,,,,,,,,,,,,,300,Heals 10 HP.
+Vulnerary(3),Item,3,,,,,,,,,,,,,,,,,,300,Heals 10 HP.
+Vulnerary(3),Item,3,,,,,,,,,,,,,,,,,,300,Heals 10 HP.
+Mend,Staff,Mag,D,15,0,0,0,0,0,0,1,,,,,,,,30,1000,Restores (14 + Mag/3) HP to an ally.
+Physic,Staff,Mag,C,10,0,0,0,0,0,0,1 ~ 7,,,,,,,,25,3000,Restores (05 + Mag/3) HP to an ally.
+Physic,Staff,Mag,C,10,0,0,0,0,0,0,1 ~ 7,,,,,,,,25,3000,Restores (05 + Mag/3) HP to an ally.
+Bronze Knife,Knife,Str,E,2,100,0,0.5,2,0,20,1 ~ 2,,,0,0,2,FALSE,FALSE,FALSE,500,"Halves player critical and offensive skill activation rate. -1 Skill/Speed, -2 Defense/Resistance on hit."
+Iron Bow,Bow,Str,D,8,80,0,1,2,0,0,2,Flying,,0,0,2,FALSE,FALSE,FALSE,1000,
+Hammer,Axe,Str,D,12,75,0,1,2,0,0,1,Armored,,0,0,1,FALSE,FALSE,TRUE,2500,Effective vs Armored Units; ineffective otherwise
+Crescent Glaive,Lance,Str,C,10,60,0,1,2,10,10,1,,,-3,0,1,FALSE,FALSE,FALSE,3000,"A heavy, bladed polearm. The introductory weapon of a great general from a far off land."
+Iron Lance,Lance,Str,D,7,80,0,1,2,0,0,1,,,0,0,2,FALSE,FALSE,FALSE,1000,
+Chest Key,Item,1,,,,,,,,,,,,,,,,,,300,Opens a chest.
+Panacea(3),Item,3,,,,,,,,,,,,,,,,,,300,Restores status ailments and debuffs.
+Pike-Ruin Club,Axe,Str,D,10,60,5,1,2,-10,0,1,Lance,,0,0,1,FALSE,FALSE,TRUE,3400,"Effective vs enemies wielding Lances, ineffective otherwise."
