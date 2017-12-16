@@ -74,6 +74,13 @@ Defense = []
 Resistance = []
 Movement = []
 sprite_list = []
+Equipped = []
+Item_uses = []
+Atk = []
+Hit = []
+Crit = []
+Avo = []
+CEva = []
 
 def translate(columns, rows):
     for i in range(0, len(columns)):
@@ -105,6 +112,13 @@ with open('static/stats1-1.csv', 'rb') as csvfile:
         Movement.append(row[11])
         column_letter.append(row[12])
         row_number.append(row[13])
+        Equipped.append(row[14])
+        Item_uses.append(row[15])
+        Atk.append(row[16])
+        Hit.append(row[17])
+        Crit.append(row[18])
+        Avo.append(row[19])
+        CEva.append(row[20])
     
     columns, rows = translate(column_letter, row_number)
     
@@ -148,7 +162,14 @@ def show_map():
                             RESISTANCE=Resistance,
                             MOVE=Movement,
                             row=rows,
-                            column=columns)
+                            column=columns,
+                            USES=Item_uses,
+                            ATK=Atk,
+                            HIT=Hit,
+                            CRIT=Crit,
+                            AVO=Avo,
+                            CEVA=CEva,
+                            EQUIPPED=Equipped)
     
 @app.errorhandler(404)
 def page_not_found(error):
