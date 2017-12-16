@@ -25,7 +25,7 @@
 		{% for character in character_list %}
 			
 			<img src="static/{{ sprite }}" alt="Sample sprite" class="Sprite" data-toggle="popover" 
-			data-content="{{ character }}: HP= 0/0 Str Mag Skl Spd Def Res Lck Mov"
+			data-content="{{ character }}: HP= {{CURRENT[loop.index0]}}/{{MAX[loop.index0]}} Str:{{STRENGTH[loop.index0]}} Mag:{{MAGIC[loop.index0]}} Skl:{{SKILL[loop.index0]}} Spd:{{SPEED[loop.index0]}} Def:{{DEFENSE[loop.index0]}} Res:{{RESISTANCE[loop.index0]}} Lck:{{LUCK[loop.index0]}} Mov:{{MOVE[loop.index0]}}"
 			style="height: 50px;
 			width: 50px; 
 			position: absolute; 
