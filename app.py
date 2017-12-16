@@ -81,6 +81,7 @@ Hit = []
 Crit = []
 Avo = []
 CEva = []
+Skills = []
 
 def translate(columns, rows):
     for i in range(0, len(columns)):
@@ -119,6 +120,7 @@ with open('static/stats1-1.csv', 'rb') as csvfile:
         Crit.append(row[18])
         Avo.append(row[19])
         CEva.append(row[20])
+        Skills.append(tuple(row[21:28]))
     
     columns, rows = translate(column_letter, row_number)
     
@@ -169,7 +171,8 @@ def show_map():
                             CRIT=Crit,
                             AVO=Avo,
                             CEVA=CEva,
-                            EQUIPPED=Equipped)
+                            EQUIPPED=Equipped,
+                            SKILLS=Skills)
     
 @app.errorhandler(404)
 def page_not_found(error):
