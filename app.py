@@ -73,6 +73,7 @@ Luck = []
 Defense = []
 Resistance = []
 Movement = []
+sprite_list = []
 
 def translate(columns, rows):
     for i in range(0, len(columns)):
@@ -91,6 +92,7 @@ with open('static/stats1-1.csv', 'rb') as csvfile:
             continue
             
         name_list.append(row[0])
+        sprite_list.append(row[1] + '.gif')
         Max.append(row[2])
         Current.append(row[3])
         Strength.append(row[4])
@@ -136,7 +138,7 @@ def show_map():
     return render_template('map.html', 
                             map='Extra rescaled.png',
                             character_list=name_list,
-                            sprite='Sprite.gif',
+                            sprite=sprite_list,
                             MAX=Max,
                             CURRENT=Current,
                             STRENGTH=Strength,
