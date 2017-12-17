@@ -175,28 +175,28 @@ def show_map():
                             SKILLS=Skills)
                             
 
-name_list = []
-column_letter = []
-row_number = []
-Max = []
-Current = []
-Strength = []
-Magic = []
-Skill = []
-Speed = []
-Luck = []
-Defense = []
-Resistance = []
-Movement = []
-sprite_list = []
-Equipped = []
-Item_uses = []
-Atk = []
-Hit = []
-Crit = []
-Avo = []
-CEva = []
-Skills = []
+Gname_list = []
+Gcolumn_letter = []
+Grow_number = []
+GMax = []
+GCurrent = []
+GStrength = []
+GMagic = []
+GSkill = []
+GSpeed = []
+GLuck = []
+GDefense = []
+GResistance = []
+GMovement = []
+Gsprite_list = []
+GEquipped = []
+GItem_uses = []
+GAtk = []
+GHit = []
+GCrit = []
+GAvo = []
+GCEva = []
+GSkills = []
                             
 with open('static/stats1x-1.csv', 'rb') as csvfile:
     rowreader = csv.reader(csvfile)
@@ -204,57 +204,57 @@ with open('static/stats1x-1.csv', 'rb') as csvfile:
         if row[12] == '' or row[12] == 'Column':
             continue
             
-        name_list.append(row[0])
-        sprite_list.append(row[1] + '.gif')
-        Max.append(row[2])
-        Current.append(row[3])
-        Strength.append(row[4])
-        Magic.append(row[5])
-        Skill.append(row[6])
-        Speed.append(row[7])
-        Luck.append(row[8])
-        Defense.append(row[9])
-        Resistance.append(row[10])
-        Movement.append(row[11])
-        column_letter.append(row[12])
-        row_number.append(row[13])
-        Equipped.append(row[14])
-        Item_uses.append(row[15])
-        Atk.append(row[16])
-        Hit.append(row[17])
-        Crit.append(row[18])
-        Avo.append(row[19])
-        CEva.append(row[20])
-        Skills.append(tuple(row[21:28]))
+        Gname_list.append(row[0])
+        Gsprite_list.append(row[1] + '.gif')
+        GMax.append(row[2])
+        GCurrent.append(row[3])
+        GStrength.append(row[4])
+        GMagic.append(row[5])
+        GSkill.append(row[6])
+        GSpeed.append(row[7])
+        GLuck.append(row[8])
+        GDefense.append(row[9])
+        GResistance.append(row[10])
+        GMovement.append(row[11])
+        Gcolumn_letter.append(row[12])
+        Grow_number.append(row[13])
+        GEquipped.append(row[14])
+        GItem_uses.append(row[15])
+        GAtk.append(row[16])
+        GHit.append(row[17])
+        GCrit.append(row[18])
+        GAvo.append(row[19])
+        GCEva.append(row[20])
+        GSkills.append(tuple(row[21:28]))
     
-    columns, rows = translate(column_letter, row_number)
+    Gcolumns, Grows = translate(Gcolumn_letter, Grow_number)
                             
 @app.route('/gaiden')
 def show_gaiden():
     return render_template( 'map.html', 
                             map='Gaiden rescaled.png',
-                            character_list=name_list,
-                            sprite=sprite_list,
-                            MAX=Max,
-                            CURRENT=Current,
-                            STRENGTH=Strength,
-                            MAGIC=Magic,
-                            SKILL=Skill,
-                            SPEED=Speed,
-                            LUCK=Luck,
-                            DEFENSE=Defense,
-                            RESISTANCE=Resistance,
+                            character_list=Gname_list,
+                            sprite=Gsprite_list,
+                            MAX=GMax,
+                            CURRENT=GCurrent,
+                            STRENGTH=GStrength,
+                            MAGIC=GMagic,
+                            SKILL=GSkill,
+                            SPEED=GSpeed,
+                            LUCK=GLuck,
+                            DEFENSE=GDefense,
+                            RESISTANCE=GResistance,
                             MOVE=Movement,
-                            row=rows,
-                            column=columns,
-                            USES=Item_uses,
-                            ATK=Atk,
-                            HIT=Hit,
-                            CRIT=Crit,
-                            AVO=Avo,
-                            CEVA=CEva,
-                            EQUIPPED=Equipped,
-                            SKILLS=Skills)
+                            row=Grows,
+                            column=Gcolumns,
+                            USES=GItem_uses,
+                            ATK=GAtk,
+                            HIT=GHit,
+                            CRIT=GCrit,
+                            AVO=GAvo,
+                            CEVA=GCEva,
+                            EQUIPPED=GEquipped,
+                            SKILLS=GSkills)
     
     
 @app.errorhandler(404)
