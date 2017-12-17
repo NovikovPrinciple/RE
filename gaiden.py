@@ -1,8 +1,6 @@
 from flask import Flask, url_for, render_template
 import csv
 
-app = Flask(__name__)
-
 column_translate = {   
                     'A':55,
                     'B':105,
@@ -123,32 +121,10 @@ with open('static/stats1-1.csv', 'rb') as csvfile:
         Skills.append(tuple(row[21:28]))
     
     columns, rows = translate(column_letter, row_number)
-    
-    
-convoy_rows = []
-with open('static/convoy.csv', 'rb') as csvfile2:
-    rowreader2 = csv.reader(csvfile2)
-    rowreader2.next()
-    for row in rowreader2:
-        convoy_rows.append(row)
-    
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return render_template('index.html')
-    
-@app.route('/convoy')
-def show_convoy():
-    return render_template( 'convoy.html',
-                            ROWS=convoy_rows)
-    
-@app.route('/shop')
-def show_shop():
-    return 'Anna is opening up shop soon. Please wait a while.'
-    
-@app.route('/map')
-def show_map():
+ 
+@gaiden.route('/gaiden')
+def show_gaiden():
     return render_template( 'map.html', 
                             map='Extra rescaled.png',
                             character_list=name_list,
@@ -173,90 +149,3 @@ def show_map():
                             CEVA=CEva,
                             EQUIPPED=Equipped,
                             SKILLS=Skills)
-                            
-
-name_list = []
-column_letter = []
-row_number = []
-Max = []
-Current = []
-Strength = []
-Magic = []
-Skill = []
-Speed = []
-Luck = []
-Defense = []
-Resistance = []
-Movement = []
-sprite_list = []
-Equipped = []
-Item_uses = []
-Atk = []
-Hit = []
-Crit = []
-Avo = []
-CEva = []
-Skills = []
-                            
-with open('static/stats1x-1.csv', 'rb') as csvfile:
-    rowreader = csv.reader(csvfile)
-    for row in rowreader:
-        if row[12] == '' or row[12] == 'Column':
-            continue
-            
-        name_list.append(row[0])
-        sprite_list.append(row[1] + '.gif')
-        Max.append(row[2])
-        Current.append(row[3])
-        Strength.append(row[4])
-        Magic.append(row[5])
-        Skill.append(row[6])
-        Speed.append(row[7])
-        Luck.append(row[8])
-        Defense.append(row[9])
-        Resistance.append(row[10])
-        Movement.append(row[11])
-        column_letter.append(row[12])
-        row_number.append(row[13])
-        Equipped.append(row[14])
-        Item_uses.append(row[15])
-        Atk.append(row[16])
-        Hit.append(row[17])
-        Crit.append(row[18])
-        Avo.append(row[19])
-        CEva.append(row[20])
-        Skills.append(tuple(row[21:28]))
-    
-    columns, rows = translate(column_letter, row_number)
-                            
-@app.route('/gaiden')
-def show_gaiden():
-    return render_template( 'map.html', 
-                            map='Gaiden rescaled.png',
-                            character_list=name_list,
-                            sprite=sprite_list,
-                            MAX=Max,
-                            CURRENT=Current,
-                            STRENGTH=Strength,
-                            MAGIC=Magic,
-                            SKILL=Skill,
-                            SPEED=Speed,
-                            LUCK=Luck,
-                            DEFENSE=Defense,
-                            RESISTANCE=Resistance,
-                            MOVE=Movement,
-                            row=rows,
-                            column=columns,
-                            USES=Item_uses,
-                            ATK=Atk,
-                            HIT=Hit,
-                            CRIT=Crit,
-                            AVO=Avo,
-                            CEVA=CEva,
-                            EQUIPPED=Equipped,
-                            SKILLS=Skills)
-    
-    
-@app.errorhandler(404)
-def page_not_found(error):
-    return "Sorry, we don't have a page like that here."
