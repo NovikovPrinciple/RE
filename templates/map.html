@@ -3,6 +3,27 @@
 	<head>
 		<title>Map - Team O</title>
 		<link rel="stylesheet" type"text/css" href="static/style.css">
+		<style>
+		PNGmap {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			z-index: -1;
+			}
+			
+		.popover-body {
+			z-index: 2;
+			color: red;
+			}
+			
+		.value {
+			font-weight: bold;
+			}
+
+		.item {
+			font-family: Arial;
+			}
+		</style>
 	</head>
 	<body>
 	
@@ -11,7 +32,7 @@
 			
 			<img src="/static/sprites/{{ sprite[loop.index0] }}" alt="Sample sprite" class="Sprite" data-toggle="popover" data-html="true"
 			data-content="
-			{{ character }}: HP= <span class='value'>{{CURRENT[loop.index0]}}</span>/{{MAX[loop.index0]}} 
+			<div class='pops'>{{ character }}: HP= <span class='value'>{{CURRENT[loop.index0]}}</span>/{{MAX[loop.index0]}} 
 				[Str:<span class='value'>{{STRENGTH[loop.index0]}}</span>] 
 				[Mag:<span class='value'>{{MAGIC[loop.index0]}}</span>] 
 				[Skl:<span class='value'>{{SKILL[loop.index0]}}</span>] 
@@ -30,7 +51,7 @@
 				Avo <span class='value'>{{AVO[loop.index0]}}</span>, 
 				CEva <span class='value'>{{CEVA[loop.index0]}}</span><br>
 				
-				Skills: {{SKILLS[loop.index0]}}"
+				Skills: {{SKILLS[loop.index0]}}</div>"
 				
 				style="height: 45px;
 				width: 45px; 
