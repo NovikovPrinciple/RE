@@ -1,5 +1,5 @@
-#Webapp for Reddit Emblem Team O,
-###by [u/](https://www.reddit.com/user/Novikov_Principle)Novikov_Principle
+# Webapp for Reddit Emblem Team O,
+### by [u/](https://www.reddit.com/user/Novikov_Principle)Novikov_Principle
 This is the repo for the RE Team O Webapp, which tracks ally and enemy stats and positions on the map, and holds convoy and shop information.
 
 The program attempts to follow the format of the [other Team Webapps](https://redditemblem.github.io/), with the main difference being that this webapp was written in **Python 2** with **Flask**, instead of JavaScript.
@@ -8,14 +8,14 @@ This application is currently deployed on [Heroku](https://team-o-webapp.herokua
 
 As far as I know, the program should work on any Desktop browser. (Not tested on mobile platforms.)
 
-##Webapp requirements
+## Webapp requirements
 - Python 2.7.14
 - Flask
 - gunicorn
 - gspread, and the Google Drive API
 - a decent Internet connection
 
-##Additional details
+## Additional details
 This program works using Python Flask, along with its built in Jinja2 Templating, along with HTML and CSS formatting. Admittedly, the code itself could see vast improvements, which will be listed in the "Future Features" section.
 
 Due to it being written in Python, the webapp was deployed on Heroku instead of Github.io.
@@ -24,7 +24,7 @@ Part of the webapp (namely, /static/spreadsheet.py) relies on Anton Burnashev's 
 
 
 
-##Helpful links
+## Helpful links
 - [/r/](https://www.reddit.com/r/Reddit_Emblem/)Reddit Emblem
 - Python Flask [documentation](http://flask.pocoo.org/docs/0.12/)
 - [/r/flask](https://www.reddit.com/r/flask/)
@@ -38,7 +38,7 @@ Part of the webapp (namely, /static/spreadsheet.py) relies on Anton Burnashev's 
 - The [Google Sheets API Reference](https://developers.google.com/sheets/api/reference/rest/)
 - datademofun's Heroku deployment [tutorial](https://github.com/datademofun/heroku-basic-flask#tldr)/documentation for Flask apps
 
-##Future Features (in no particular order)
+## Future Features (in no particular order)
 * improved [Popover](http://getbootstrap.com/docs/4.0/components/popovers/) formatting, including item/weapon/skill descriptions and stat breakdowns (Base + etc.)
 * enemy Movement and Attack ranges on-click
 * proper CSS for the Webapp's [index](https://team-o-webapp.herokuapp.com/index) page
