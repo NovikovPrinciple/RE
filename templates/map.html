@@ -1,77 +1,68 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Map - Team O</title>
-		<link rel="stylesheet" type"text/css" href="static/style.css">
-		<style>
-		PNGmap {
-			position: absolute;
-			left: 0px;
-			top: 0px;
-			z-index: 5;
-			}
-			
-		.popover-body {
-			z-index: -5;
-			background: white;
-			}
-			
-		.pops	{
-			z-index: -5;
-			}
-			
-		.value {
-			font-weight: bold;
-			}
-
-		.item {
-			font-family: Arial;
-			}
-		</style>
-	</head>
-	<body>
-	
-		<img src="static/{{ map }}" alt="Deployment map" class="PNGmap">
+{% extends "base.html" %}
+{% block title %}Chapter 1{% endblock %}
+{%block head %}
+	{{ super() }}
+	<style>
+	.PNGmap		{
+		z-index: -5;
+	}
+	.popover	{
+		background-color: white;
+		z-index: 5;
+	}
+	.value		{
+		font-weight: bold;
+	}
+	</style>
+{% endblock %}
+{% block body %}
+	<img src="static/{{ map }}" alt="Deployment map" class="PNGmap">
 		{% for character in character_list %}
-			
-			<img src="/static/sprites/{{ sprite[loop.index0] }}" alt="Sample sprite" class="Sprite" data-toggle="popover" data-html="true"
+			{% if ROW[loop.index0] %}
+			<img src="/static/sprites/{{ sprite[loop.index0] }}.gif" alt="Sample sprite" class="Sprite" data-toggle="popover" data-html="true"
 			data-content="
-			<div class='pops'>{{ character }}: HP= <span class='value'>{{CURRENT[loop.index0]}}</span>/{{MAX[loop.index0]}} 
-				[Str:<span class='value'>{{STRENGTH[loop.index0]}}</span>] 
-				[Mag:<span class='value'>{{MAGIC[loop.index0]}}</span>] 
-				[Skl:<span class='value'>{{SKILL[loop.index0]}}</span>] 
-				[Spd:<span class='value'>{{SPEED[loop.index0]}}</span>] 
-				[Def:<span class='value'>{{DEFENSE[loop.index0]}}</span>] 
-				[Res:<span class='value'>{{RESISTANCE[loop.index0]}}</span>] 
-				[Lck:<span class='value'>{{LUCK[loop.index0]}}</span>] 
-				[Mov:<span class='value'>{{MOVE[loop.index0]}}</span>]<br>
+				{{ character }}: {{ CURRENT[loop.index0] }}/{{ MAX[loop.index0] }}
+				[Str <span class='value'>{{ STR[loop.index0] }}</span>]
+				[Mag <span class='value'>{{ MAG[loop.index0] }}</span>]
+				[Skl <span class='value'>{{ SKL[loop.index0] }}</span>]
+				[Spd <span class='value'>{{ SPD[loop.index0] }}</span>]
+				[Lck <span class='value'>{{ LCK[loop.index0] }}</span>]
+				[Mov <span class='value'>{{ MOV[loop.index0] }}</span><br>
 				
-				Equipped: <span class='item'>{{EQUIPPED[loop.index0]}}</span>, 
-				Item uses: <span class='item'>{{USES[loop.index0]}}</span><br>
+				Inventory: {% if ITEM1[loop.index0] %}<strong>{{ ITEM1[loop.index0] }}</strong>{% endif %}
+				{% if ITEM2[loop.index0] %}{{ ITEM2[loop.index0] }}{% endif %}
+				{% if ITEM3[loop.index0] %}{{ ITEM3[loop.index0] }}{% endif %}
+				{% if ITEM4[loop.index0] %}{{ ITEM4[loop.index0] }}{% endif %}
+				{% if ITEM5[loop.index0] %}{{ ITEM5[loop.index0] }}{% endif %}<br>
 				
-				Atk <span class='value'>{{ATK[loop.index0]}}</span>, 
-				Hit <span class='value'>{{HIT[loop.index0]}}</span>, 
-				Crit <span class='value'>{{CRIT[loop.index0]}}</span>, 
-				Avo <span class='value'>{{AVO[loop.index0]}}</span>, 
-				CEva <span class='value'>{{CEVA[loop.index0]}}</span><br>
+				{% if ACC[loop.index0] %}Accessory: {{ ACC[loop.index0] }}<br>{% endif %}
 				
-				Skills: {{SKILLS[loop.index0]}}</div>"
+				Atk: <span class='value'>{{ ATK[loop.index0] }}</span>,
+				Hit: <span class='value'>{{ HIT[loop.index0] }}</span>,
+				Crit: <span class='value'>{{CRIT[loop.index0] }}</span>,
+				Avo: <span class='value'>{{ AVO[loop.index0] }}</span>,
+				CEva: <span class='value'>{{ CEVA[loop.index0] }}</span><br>
+				
+				Skills: {% if SKILL1[loop.index0] %}<span class='skill'>[{{ SKILL1[loop.index0] }}]</span>{% endif %}
+				{% if SKILL2[loop.index0] %}<span class='skill'>[{{ SKILL2[loop.index0] }}]</span>{% endif %}
+				{% if SKILL3[loop.index0] %}<span class='skill'>[{{ SKILL3[loop.index0] }}]</span>{% endif %}
+				{% if SKILL4[loop.index0] %}<span class='skill'>[{{ SKILL4[loop.index0] }}]</span>{% endif %}
+				{% if SKILL5[loop.index0] %}<span class='skill'>[{{ SKILL5[loop.index0] }}]</span>{% endif %}
+				{% if SKILL6[loop.index0] %}<span class='skill'>[{{ SKILL6[loop.index0] }}]</span>{% endif %}
+				{% if SKILL7[loop.index0] %}<span class='skill'>[{{ SKILL7[loop.index0] }}]</span>{% endif %}
+				{% if SKILL8[loop.index0] %}<span class='skill'>[{{ SKILL8[loop.index0] }}]</span>{% endif %}"
 				
 				style="height: 45px;
 				width: 45px; 
 				position: absolute; 
-				left: {{ column[loop.index0] }}px;
-				top: {{ row[loop.index0] }}px; 
-				z-index: 1;" >
+				{% if STATPACK[loop.index0] == 'TRUE' %}
+				left: {{ COL[loop.index0] + 10 }}px;
+				top: {{ ROW[loop.index0] - 10 }}px;
+				z-index: 3;
+				{% else %}
+				left: {{ COL[loop.index0] - 5 }}px;
+				top: {{ ROW[loop.index0] + 5 }}px;
+				z-index: 5;{% endif %}">
+			{% endif %} 
 		{% endfor %}
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<script>
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover(); 
-});
-</script>
-	</body>
-</html>
+{% endblock %}

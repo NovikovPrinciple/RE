@@ -60,69 +60,69 @@ row_translate = {
                     '24':1205
                 }
 
-name_list = []
-column_letter = []
-row_number = []
-Max = []
-Current = []
-Strength = []
-Magic = []
-Skill = []
-Speed = []
-Luck = []
-Defense = []
-Resistance = []
-Movement = []
-sprite_list = []
-Equipped = []
-Item_uses = []
-Atk = []
-Hit = []
-Crit = []
-Avo = []
-CEva = []
-Skills = []
+
 
 def translate(columns, rows):
     for i in range(0, len(columns)):
-        columns[i] = column_translate[columns[i]]
-        
+        try:
+            if columns[i] == 'Column' or columns[i] == '':
+                continue
+            columns[i] = column_translate[columns[i]]
+        except:
+            if KeyError:
+                continue
+
     for i in range(0, len(rows)):
-        rows[i] = row_translate[rows[i]]
-        
+        try:
+            if rows[i] == 'Row' or rows[i] == '':
+                continue
+            rows[i] = row_translate[rows[i]]
+        except:
+            if KeyError:
+                continue
     return columns, rows
     
     
-with open('static/stats1-1.csv', 'rb') as csvfile:
-    rowreader = csv.reader(csvfile)
-    for row in rowreader:
-        if row[12] == '' or row[12] == 'Column':
-            continue
-            
-        name_list.append(row[0])
-        sprite_list.append(row[1] + '.gif')
-        Max.append(row[2])
-        Current.append(row[3])
-        Strength.append(row[4])
-        Magic.append(row[5])
-        Skill.append(row[6])
-        Speed.append(row[7])
-        Luck.append(row[8])
-        Defense.append(row[9])
-        Resistance.append(row[10])
-        Movement.append(row[11])
-        column_letter.append(row[12])
-        row_number.append(row[13])
-        Equipped.append(row[14])
-        Item_uses.append(row[15])
-        Atk.append(row[16])
-        Hit.append(row[17])
-        Crit.append(row[18])
-        Avo.append(row[19])
-        CEva.append(row[20])
-        Skills.append(tuple(row[21:28]))
+
     
-    columns, rows = translate(column_letter, row_number)
+with open('static/sample.csv', 'rb') as csvfile:
+    rowreader = csv.reader(csvfile)
+    Characters = rowreader.next()
+    Class = rowreader.next()
+    Max = rowreader.next()
+    Current = rowreader.next()
+    Str = rowreader.next()
+    Mag = rowreader.next()
+    Skl = rowreader.next()
+    Spd = rowreader.next()
+    Lck = rowreader.next()
+    Def = rowreader.next()
+    Res = rowreader.next()
+    Move = rowreader.next()
+    Atk = rowreader.next()
+    Hit = rowreader.next()
+    Crit = rowreader.next()
+    Avo = rowreader.next()
+    CEva = rowreader.next()
+    Item1 = rowreader.next()
+    Item2 = rowreader.next()
+    Item3 = rowreader.next()
+    Item4 = rowreader.next()
+    Item5 = rowreader.next()
+    Accessory = rowreader.next()
+    Skill1 = rowreader.next()
+    Skill2 = rowreader.next()
+    Skill3 = rowreader.next()
+    Skill4 = rowreader.next()
+    Skill5 = rowreader.next()
+    Skill6 = rowreader.next()
+    Skill7 = rowreader.next()
+    Skill8 = rowreader.next()
+    Column = rowreader.next()
+    Row = rowreader.next()
+    Statpack = rowreader.next()
+    
+columns, rows = translate(Column, Row)
     
     
 convoy_rows = []
@@ -151,111 +151,40 @@ def show_shop():
 def show_map():
     return render_template( 'map.html', 
                             map='Extra rescaled.png',
-                            character_list=name_list,
-                            sprite=sprite_list,
-                            MAX=Max,
+                            character_list=Characters,
+                            sprite=Class,
                             CURRENT=Current,
-                            STRENGTH=Strength,
-                            MAGIC=Magic,
-                            SKILL=Skill,
-                            SPEED=Speed,
-                            LUCK=Luck,
-                            DEFENSE=Defense,
-                            RESISTANCE=Resistance,
-                            MOVE=Movement,
-                            row=rows,
-                            column=columns,
-                            USES=Item_uses,
+                            MAX=Max,
+                            STR=Str,
+                            MAG=Mag,
+                            SKL=Skl,
+                            SPD=Spd,
+                            DEF=Def,
+                            RES=Res,
+                            LCK=Lck,
+                            MOV= Move,
+                            ITEM1=Item1,
+                            ITEM2=Item2,
+                            ITEM3=Item3,
+                            ITEM4=Item4,
+                            ITEM5=Item5,
+                            ACC=Accessory,
                             ATK=Atk,
                             HIT=Hit,
                             CRIT=Crit,
                             AVO=Avo,
                             CEVA=CEva,
-                            EQUIPPED=Equipped,
-                            SKILLS=Skills)
-                            
-
-Gname_list = []
-Gcolumn_letter = []
-Grow_number = []
-GMax = []
-GCurrent = []
-GStrength = []
-GMagic = []
-GSkill = []
-GSpeed = []
-GLuck = []
-GDefense = []
-GResistance = []
-GMovement = []
-Gsprite_list = []
-GEquipped = []
-GItem_uses = []
-GAtk = []
-GHit = []
-GCrit = []
-GAvo = []
-GCEva = []
-GSkills = []
-                            
-with open('static/stats1x-1.csv', 'rb') as csvfile:
-    rowreader = csv.reader(csvfile)
-    for row in rowreader:
-        if row[12] == '' or row[12] == 'Column':
-            continue
-            
-        Gname_list.append(row[0])
-        Gsprite_list.append(row[1] + '.gif')
-        GMax.append(row[2])
-        GCurrent.append(row[3])
-        GStrength.append(row[4])
-        GMagic.append(row[5])
-        GSkill.append(row[6])
-        GSpeed.append(row[7])
-        GLuck.append(row[8])
-        GDefense.append(row[9])
-        GResistance.append(row[10])
-        GMovement.append(row[11])
-        Gcolumn_letter.append(row[12])
-        Grow_number.append(row[13])
-        GEquipped.append(row[14])
-        GItem_uses.append(row[15])
-        GAtk.append(row[16])
-        GHit.append(row[17])
-        GCrit.append(row[18])
-        GAvo.append(row[19])
-        GCEva.append(row[20])
-        GSkills.append(tuple(row[21:28]))
-    
-    Gcolumns, Grows = translate(Gcolumn_letter, Grow_number)
-                            
-@app.route('/gaiden')
-def show_gaiden():
-    return render_template( 'map.html', 
-                            map='Gaiden rescaled.png',
-                            character_list=Gname_list,
-                            sprite=Gsprite_list,
-                            MAX=GMax,
-                            CURRENT=GCurrent,
-                            STRENGTH=GStrength,
-                            MAGIC=GMagic,
-                            SKILL=GSkill,
-                            SPEED=GSpeed,
-                            LUCK=GLuck,
-                            DEFENSE=GDefense,
-                            RESISTANCE=GResistance,
-                            MOVE=Movement,
-                            row=Grows,
-                            column=Gcolumns,
-                            USES=GItem_uses,
-                            ATK=GAtk,
-                            HIT=GHit,
-                            CRIT=GCrit,
-                            AVO=GAvo,
-                            CEVA=GCEva,
-                            EQUIPPED=GEquipped,
-                            SKILLS=GSkills)
-    
+                            SKILL1=Skill1,
+                            SKILL2=Skill2,
+                            SKILL3=Skill3,
+                            SKILL4=Skill4,
+                            SKILL5=Skill5,
+                            SKILL6=Skill6,
+                            SKILL7=Skill7,
+                            SKILL8=Skill8,
+                            ROW=Row,
+                            COL=Column,
+                            STATPACK=Statpack)
     
 @app.errorhandler(404)
 def page_not_found(error):

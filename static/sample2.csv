@@ -1,0 +1,30 @@
+Jericho,Gwyllgi 1,Gwyllgi 2,Maelduin 1,Maelduin 2,Revnant 1,Revnant 2,Revnant 3,Medusa 1,Medusa 2,Medusa 3,Arch Mogall 1,Arch Mogall 2,Arch Mogall 3,Arch Mogall 4,Arch Mogall 5,Deathgoyle 1,Deathgoyle 2,Deathgoyle 3,Deathgoyle 4,Deathgoyle 5,Stone Golem 1,Cyclops 1,Cyclops 2,Wight 1,Wight 2,Wight 3,Deadeye 1,Deadeye 2
+Adventurer,Gwyllgi,Gwyllgi,Maelduin,Maelduin,Revnant,Revnant,Revnant,Medusa,Medusa,Medusa,Arch Mogall,Arch Mogall,Arch Mogall,Arch Mogall,Arch Mogall,Deathgoyle,Deathgoyle,Deathgoyle,Deathgoyle,Deathgoyle,Stone Golem,Cyclops,Cyclops,Wight,Wight,Wight,Deadeye,Deadeye
+55,25,25,30,30,30,30,30,30,30,30,25,25,25,25,25,30,30,30,30,30,40,40,40,35,35,35,30,30
+55,0,0,1,30,0,30,24,30,30,30,25,25,25,25,25,30,30,30,30,30,40,40,40,35,35,35,30,30
+32,18,18,22,22,20,20,20,0,0,0,18,18,18,18,18,21,21,21,21,21,23,40,40,20,20,20,22,22
+36,0,0,0,0,0,0,-2,21,21,21,18,18,18,18,18,0,0,0,0,0,0,0,0,12,12,12,10,10
+32,15,15,13,13,14,14,14,27,27,27,23,23,23,23,23,15,15,15,15,15,15,10,10,17,17,17,19,19
+39,30,30,20,20,19,19,19,12,12,12,22,22,22,22,22,21,21,21,21,21,0,15,15,20,20,20,20,20
+32,20,20,12,12,30,30,30,15,15,15,12,12,12,12,12,12,12,12,12,12,15,5,5,14,14,14,15,15
+30,10,10,16,16,17,17,14,13,13,13,7,7,7,7,7,14,14,14,14,14,25,15,15,16,16,16,14,14
+40,10,10,10,10,17,17,14,24,24,24,13,13,13,13,13,9,9,9,9,9,7,7,7,12,12,12,10,10
+6,7,7,8,8,6,6,6,6,6,6,7,7,7,7,7,8,8,8,8,8,5,6,6,6,6,6,6,6
+43,24,24,28,28,27,27,27,28,28,28,25,25,25,25,25,26,26,26,25,26,28,46,46,24,24,24,28,28
+152,128,128,109,109,124,124,124,137,137,137,129,129,129,129,129,122,122,122,107,122,144,94,94,137,117,137,130,130
+19,6,6,5,5,5,5,5,12,12,12,10,10,10,10,10,6,6,6,6,6,-4,33,33,7,7,7,8,8
+83,70,70,39,39,52,52,52,29,29,29,42,42,42,42,42,41,41,41,31,41,1,27,27,41,41,41,41,41
+21,10,10,26,26,25,25,25,8,8,8,6,6,6,6,6,26,26,26,6,26,18,3,3,27,7,27,28,28
+Steel Bow,Fiery Fang,Fiery Fang,Bronze Axe,Bronze Axe,Rotten Claw,Rotten Claw,Rotten Claw,Evil Eye,Evil Eye,Evil Eye,Evil Eye,Evil Eye,Evil Eye,Evil Eye,Evil Eye,Bronze Lance,Bronze Lance,Bronze Lance,Bronze Lance,Bronze Lance,Boulder,Iron Club,Iron Club,Bronze Sword,Bronze Sword,Bronze Sword,Bronze Bow,Bronze Bow
+Dual Yumi,,Vulnerary(3),,Vulnerary(3),,Vulnerary(3),,Petrify,Petrify,Petrify,,Vulnerary(3),Eyes Like Daggers,,Concoction(2),,,Concoction(2),Merciful Bow,Vulnerary(3),Elixir(1),,Vulnerary(3),,Iron Shuriken,,,Vulnerary(3)
+Silence,,,,,,,,,Vulnerary(3),,,,,,,,,,,,,,,,,,,
+Freeze,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Elixir(∞),,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Trickshot,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Preparation,Darting Blow,Darting Blow,,,,,,Seal Defense,Seal Defense,Seal Defense,,,Inevitable End,,,,,,,,,,,,Inevitable End,,,
+Movement +,,,,,,,,Seal Resistance,Seal Resistance,Seal Resistance,,,,,,,,,,,,,,,,,,
+Exploit,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Seal Precision,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Live To Serve,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Pass,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Tomebreaker,,,,,,,,,,,,,,,,,,,,,,,,,,,,
