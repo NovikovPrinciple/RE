@@ -193,6 +193,7 @@ def show_shop():
 def show_map():
     return render_template( 'map.html', 
                             map='Extra rescaled.png',
+                            TITLE='Chapter 1',
                             character_list=Characters,
                             sprite=Class,
                             CURRENT=Current,
@@ -233,6 +234,7 @@ def show_map():
 def show_gaiden():
     return render_template( 'map.html', 
                             map='Gaiden rescaled.gif',
+                            TITLE='Chapter 1x',
                             character_list=GCharacters,
                             sprite=GClass,
                             CURRENT=GCurrent,
