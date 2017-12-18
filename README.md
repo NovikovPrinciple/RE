@@ -16,7 +16,7 @@ As far as I know, the program should work on any Desktop browser. (Not tested on
 - a decent Internet connection
 
 ## Additional details
-This program works using Python Flask, along with its built in Jinja2 Templating, along with HTML and CSS formatting. Admittedly, the code itself could see vast improvements, which will be listed in the "Future Features" section.
+This program works using Python Flask, with its built in Jinja2 Templating, along with HTML and CSS formatting. Admittedly, the code itself could see vast improvements, which will be listed in the "Future Features" section.
 
 Due to it being written in Python, the webapp was deployed on Heroku instead of Github.io.
 
