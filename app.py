@@ -164,7 +164,6 @@ with open('static/sample2.csv', 'rb') as csvfile2:
     GStatpack = rowreader.next()
     Gis_PNG = rowreader.next()
 
-print Gis_PNG
 Gcolumns, Grows = translate(GColumn, GRow)
 
     
@@ -233,7 +232,7 @@ def show_map():
 @app.route('/gaiden')
 def show_gaiden():
     return render_template( 'map.html', 
-                            map='Gaiden rescaled.png',
+                            map='Gaiden rescaled.gif',
                             character_list=GCharacters,
                             sprite=GClass,
                             CURRENT=GCurrent,
