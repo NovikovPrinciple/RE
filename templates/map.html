@@ -19,6 +19,8 @@
 	<img src="static/{{ map }}" alt="Deployment map" class="PNGmap">
 		{% for character in character_list %}
 			{% if ROW[loop.index0] %}
+			{# Note: The default sprite image type is GIF. If it's PNG, be sure to modify the 
+			is_PNG row (the last row) of the appropriate CSV accordingly. #}
 			<img src="/static/sprites/{{ sprite[loop.index0] }}{% if PNG[loop.index0] == 'TRUE' %}.png{% else %}.gif{% endif %}" alt="Sample sprite" class="Sprite" data-toggle="popover" data-html="true"
 			data-content="
 				{{ character }}: {{ CURRENT[loop.index0] }}/{{ MAX[loop.index0] }}
@@ -52,6 +54,7 @@
 				{% if SKILL7[loop.index0] %}<span class='skill'>[{{ SKILL7[loop.index0] }}]</span>{% endif %}
 				{% if SKILL8[loop.index0] %}<span class='skill'>[{{ SKILL8[loop.index0] }}]</span>{% endif %}"
 				
+				{# 
 				style="height: 45px;
 				width: 45px; 
 				position: absolute; 
