@@ -3,6 +3,17 @@ from oauth2client.service_account import ServiceAccountCredentials
 import pprint
 import csv
 
+"""
+This script accesses the RE Team O Google Sheet and
+creates an Excel CSV file with the general stats needed
+for the webapp to function.
+
+NOTE: Personally clean the CSV if Unicode issues arise.
+Also, add rows for "Column", "Row", "Statpack", and
+"is PNG" before splitting the Excel file into a CSV for
+the Main Map and a CSV for the Gaiden map.
+"""
+
 scope = ['https://spreadsheets.google.com/feeds']
 creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
 client = gspread.authorize(creds)
@@ -36,9 +47,10 @@ for i in range(19, 25):
 for i in range(46, 53):
     rows_to_take.append(enemy_stats.row_values(i))
 
-with open('Stats Base.csv', 'wb') as test_file:
-    list = rows_to_take
-    writer = csv.writer(test_file)
-    for row in list:
-        row = [s.encode('utf-8') for s in row]
-        writer.writerows([row])
+if "__name__" == "__main__":
+    with open('Stats Base.csv', 'wb') as test_file:
+        list = rows_to_take
+        writer = csv.writer(test_file)
+        for row in list:
+            row = [s.encode('utf-8') for s in row]
+            writer.writerows([row])
