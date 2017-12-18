@@ -84,7 +84,7 @@ def translate(columns, rows):
     
     
 
-    
+# This one is for the main map:
 with open('static/sample.csv', 'rb') as csvfile:
     rowreader = csv.reader(csvfile)
     Characters = rowreader.next()
@@ -121,9 +121,52 @@ with open('static/sample.csv', 'rb') as csvfile:
     Column = rowreader.next()
     Row = rowreader.next()
     Statpack = rowreader.next()
+    is_PNG = rowreader.next()
     
 columns, rows = translate(Column, Row)
     
+# This one's for the Gaiden:
+with open('static/sample2.csv', 'rb') as csvfile2:
+    rowreader = csv.reader(csvfile2)
+    GCharacters = rowreader.next()
+    GClass = rowreader.next()
+    GMax = rowreader.next()
+    GCurrent = rowreader.next()
+    GStr = rowreader.next()
+    GMag = rowreader.next()
+    GSkl = rowreader.next()
+    GSpd = rowreader.next()
+    GLck = rowreader.next()
+    GDef = rowreader.next()
+    GRes = rowreader.next()
+    GMove = rowreader.next()
+    GAtk = rowreader.next()
+    GHit = rowreader.next()
+    GCrit = rowreader.next()
+    GAvo = rowreader.next()
+    GCEva = rowreader.next()
+    GItem1 = rowreader.next()
+    GItem2 = rowreader.next()
+    GItem3 = rowreader.next()
+    GItem4 = rowreader.next()
+    GItem5 = rowreader.next()
+    GAccessory = rowreader.next()
+    GSkill1 = rowreader.next()
+    GSkill2 = rowreader.next()
+    GSkill3 = rowreader.next()
+    GSkill4 = rowreader.next()
+    GSkill5 = rowreader.next()
+    GSkill6 = rowreader.next()
+    GSkill7 = rowreader.next()
+    GSkill8 = rowreader.next()
+    GColumn = rowreader.next()
+    GRow = rowreader.next()
+    GStatpack = rowreader.next()
+    Gis_PNG = rowreader.next()
+
+print Gis_PNG
+Gcolumns, Grows = translate(GColumn, GRow)
+
     
 convoy_rows = []
 with open('static/convoy.csv', 'rb') as csvfile2:
@@ -184,8 +227,49 @@ def show_map():
                             SKILL8=Skill8,
                             ROW=Row,
                             COL=Column,
-                            STATPACK=Statpack)
-    
+                            STATPACK=Statpack,
+                            PNG=is_PNG)
+
+@app.route('/gaiden')
+def show_gaiden():
+    return render_template( 'map.html', 
+                            map='Gaiden rescaled.png',
+                            character_list=GCharacters,
+                            sprite=GClass,
+                            CURRENT=GCurrent,
+                            MAX=GMax,
+                            STR=GStr,
+                            MAG=GMag,
+                            SKL=GSkl,
+                            SPD=GSpd,
+                            DEF=GDef,
+                            RES=GRes,
+                            LCK=GLck,
+                            MOV=GMove,
+                            ITEM1=GItem1,
+                            ITEM2=GItem2,
+                            ITEM3=GItem3,
+                            ITEM4=GItem4,
+                            ITEM5=GItem5,
+                            ACC=GAccessory,
+                            ATK=GAtk,
+                            HIT=GHit,
+                            CRIT=GCrit,
+                            AVO=GAvo,
+                            CEVA=GCEva,
+                            SKILL1=GSkill1,
+                            SKILL2=GSkill2,
+                            SKILL3=GSkill3,
+                            SKILL4=GSkill4,
+                            SKILL5=GSkill5,
+                            SKILL6=GSkill6,
+                            SKILL7=GSkill7,
+                            SKILL8=GSkill8,
+                            ROW=GRow,
+                            COL=GColumn,
+                            STATPACK=GStatpack,
+                            PNG=Gis_PNG)
+                            
 @app.errorhandler(404)
 def page_not_found(error):
     return "Sorry, we don't have a page like that here."

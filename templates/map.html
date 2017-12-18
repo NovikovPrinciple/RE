@@ -19,7 +19,7 @@
 	<img src="static/{{ map }}" alt="Deployment map" class="PNGmap">
 		{% for character in character_list %}
 			{% if ROW[loop.index0] %}
-			<img src="/static/sprites/{{ sprite[loop.index0] }}.gif" alt="Sample sprite" class="Sprite" data-toggle="popover" data-html="true"
+			<img src="/static/sprites/{{ sprite[loop.index0] }}{% if PNG == 'TRUE' %}.png{% else %}.gif{% endif %}" alt="Sample sprite" class="Sprite" data-toggle="popover" data-html="true"
 			data-content="
 				{{ character }}: {{ CURRENT[loop.index0] }}/{{ MAX[loop.index0] }}
 				[Str <span class='value'>{{ STR[loop.index0] }}</span>]

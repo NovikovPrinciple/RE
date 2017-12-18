@@ -36,14 +36,7 @@ for i in range(19, 25):
 for i in range(46, 53):
     rows_to_take.append(enemy_stats.row_values(i))
 
-
-#print "NEXT STAGE!\n\n" + "="*30
-
-#worksheet_list = sheet.worksheets()
-#pp.pprint(worksheet_list)
-
-
-with open('sample.csv', 'wb') as test_file:
+with open('Stats Base.csv', 'wb') as test_file:
     list = rows_to_take
     writer = csv.writer(test_file)
     for row in list:
