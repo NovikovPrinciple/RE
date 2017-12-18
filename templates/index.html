@@ -11,12 +11,12 @@
 	</style>
 {% endblock %}
 {% block body %}
-		<p><a href="{{ url_for('show_map') }}">Load map</a></p>
+		<a href="{{ url_for('show_map') }}"><button class="bnt-load btn">Load map</button></a>
 		<br>
-		<p><a href="{{ url_for('show_gaiden') }}">Load gaiden</a></p>
+		<a href="{{ url_for('show_gaiden') }}"><button class="bnt-load btn">Load gaiden</button></a>
 		<br>
-		<p><a href="{{ url_for('show_convoy') }}">Convoy</a></p>
+		<a href="{{ url_for('show_convoy') }}"><button class="bnt-convoy btn">Convoy</button></a>
 		<br>
-		<p><a href="{{ url_for('show_shop') }}">Shop</a></p>
+		<a href="{{ url_for('show_shop') }}"><button class="bnt-shop btn">Shop</button></a>
 		<a href="https://github.com/NovikovPrinciple/RE"><img class="git-link" src="/static/favicon-16x16.png"></a>
 {% endblock %}
