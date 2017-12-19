@@ -43,4 +43,4 @@ Part of the webapp (namely, /static/spreadsheet.py) relies on Anton Burnashev's 
 * enemy Movement and Attack ranges on-click
 * proper CSS for the Webapp's [index](https://team-o-webapp.herokuapp.com/index) page
 * an actual [Shop](http://team-o-webapp.herokuapp.com/shop) page, featuring Ally inventories, Gold, and Ore totals, and an item list with prices
-* tooltip text that shows Terrain information when the mouse hovers over specific Map spaces ([whoa, technology!](http://i0.kym-cdn.com/entries/icons/original/000/022/065/image.png))
+* ~~tooltip text that shows Terrain information when the mouse hovers over specific Map spaces ([whoa, technology!](http://i0.kym-cdn.com/entries/icons/original/000/022/065/image.png))~~ DONE!
