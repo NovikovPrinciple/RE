@@ -8,10 +8,22 @@
 	}
 	.popover	{
 		background-color: white;
-		z-index: 5;
+	}
+	.popover-image	{
+		overflow: visible;
 	}
 	.value		{
 		font-weight: bold;
+	}
+	.map-tile	{
+		position: absolute;
+		opacity: 0;
+		height: 50px;
+		width: 50px;
+		z-index: 4;
+	}
+	.tooltip	{
+		background-color: white;
 	}
 	</style>
 {% endblock %}
@@ -67,6 +79,16 @@
 				left: {{ COL[loop.index0] - 5 }}px;
 				top: {{ ROW[loop.index0] + 5 }}px;
 				z-index: 5;{% endif %}">
+				
 			{% endif %} 
+		{% endfor %}
+		{% for row in terrain_list %}
+			{% set outer_loop = loop %}
+			{% for column in row %}
+				<div class="popover-image" data-container="body"><img src="/static/blank.png" class="map-tile" data-toggle="tooltip" data-placement="right" data-html="true" data-container="body" data-delay="500"
+				title="<div class='popover-text'>{{ column }}<br>Generic</div>"
+				style="left: {{ ((loop.index + 18) % 18 * 50) + 10 }}px;
+				top: {{ (outer_loop.index * 50) +10 }}px;"></div>
+			{% endfor %}
 		{% endfor %}
 {% endblock %}

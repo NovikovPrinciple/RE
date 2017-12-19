@@ -127,51 +127,59 @@ columns, rows = translate(Column, Row)
     
 # This one's for the Gaiden:
 with open('static/sample2.csv', 'rb') as csvfile2:
-    rowreader = csv.reader(csvfile2)
-    GCharacters = rowreader.next()
-    GClass = rowreader.next()
-    GMax = rowreader.next()
-    GCurrent = rowreader.next()
-    GStr = rowreader.next()
-    GMag = rowreader.next()
-    GSkl = rowreader.next()
-    GSpd = rowreader.next()
-    GLck = rowreader.next()
-    GDef = rowreader.next()
-    GRes = rowreader.next()
-    GMove = rowreader.next()
-    GAtk = rowreader.next()
-    GHit = rowreader.next()
-    GCrit = rowreader.next()
-    GAvo = rowreader.next()
-    GCEva = rowreader.next()
-    GItem1 = rowreader.next()
-    GItem2 = rowreader.next()
-    GItem3 = rowreader.next()
-    GItem4 = rowreader.next()
-    GItem5 = rowreader.next()
-    GAccessory = rowreader.next()
-    GSkill1 = rowreader.next()
-    GSkill2 = rowreader.next()
-    GSkill3 = rowreader.next()
-    GSkill4 = rowreader.next()
-    GSkill5 = rowreader.next()
-    GSkill6 = rowreader.next()
-    GSkill7 = rowreader.next()
-    GSkill8 = rowreader.next()
-    GColumn = rowreader.next()
-    GRow = rowreader.next()
-    GStatpack = rowreader.next()
-    Gis_PNG = rowreader.next()
+    rowreader2 = csv.reader(csvfile2)
+    GCharacters = rowreader2.next()
+    GClass = rowreader2.next()
+    GMax = rowreader2.next()
+    GCurrent = rowreader2.next()
+    GStr = rowreader2.next()
+    GMag = rowreader2.next()
+    GSkl = rowreader2.next()
+    GSpd = rowreader2.next()
+    GLck = rowreader2.next()
+    GDef = rowreader2.next()
+    GRes = rowreader2.next()
+    GMove = rowreader2.next()
+    GAtk = rowreader2.next()
+    GHit = rowreader2.next()
+    GCrit = rowreader2.next()
+    GAvo = rowreader2.next()
+    GCEva = rowreader2.next()
+    GItem1 = rowreader2.next()
+    GItem2 = rowreader2.next()
+    GItem3 = rowreader2.next()
+    GItem4 = rowreader2.next()
+    GItem5 = rowreader2.next()
+    GAccessory = rowreader2.next()
+    GSkill1 = rowreader2.next()
+    GSkill2 = rowreader2.next()
+    GSkill3 = rowreader2.next()
+    GSkill4 = rowreader2.next()
+    GSkill5 = rowreader2.next()
+    GSkill6 = rowreader2.next()
+    GSkill7 = rowreader2.next()
+    GSkill8 = rowreader2.next()
+    GColumn = rowreader2.next()
+    GRow = rowreader2.next()
+    GStatpack = rowreader2.next()
+    Gis_PNG = rowreader2.next()
 
 Gcolumns, Grows = translate(GColumn, GRow)
 
+Gterrain_list = []
+
+with open('static/terrain_gaiden.csv', 'rb') as terrainfile2:
+    rowreader4 = csv.reader(terrainfile2)
+    for i in range(0, 17):                                #use range(0, number of map rows)
+        Gterrain_list.append(rowreader4.next())
+
+Gterrain_list[0][0] = 'Plains'
     
 convoy_rows = []
-with open('static/convoy.csv', 'rb') as csvfile2:
-    rowreader2 = csv.reader(csvfile2)
-    rowreader2.next()
-    for row in rowreader2:
+with open('static/convoy.csv', 'rb') as csvfile4:
+    rowreader5 = csv.reader(csvfile4)
+    rowreader5.next()
+    for row in rowreader5:
         convoy_rows.append(row)
     
 
@@ -228,7 +236,8 @@ def show_map():
                             ROW=Row,
                             COL=Column,
                             STATPACK=Statpack,
-                            PNG=is_PNG)
+                            PNG=is_PNG,
+                            terrain_list=[])
 
 @app.route('/gaiden')
 def show_gaiden():
@@ -269,7 +278,50 @@ def show_gaiden():
                             ROW=GRow,
                             COL=GColumn,
                             STATPACK=GStatpack,
-                            PNG=Gis_PNG)
+                            PNG=Gis_PNG,
+                            terrain_list=Gterrain_list)
+                            
+@app.route('/sample')
+def show_sample():
+    return render_template( 'map.html', 
+                            map='Extra rescaled.png',
+                            TITLE='EXPERIMENTAL',
+                            character_list=[],
+                            sprite=[],
+                            CURRENT=[],
+                            MAX=[],
+                            STR=[],
+                            MAG=[],
+                            SKL=[],
+                            SPD=[],
+                            DEF=[],
+                            RES=[],
+                            LCK=[],
+                            MOV=[],
+                            ITEM1=[],
+                            ITEM2=[],
+                            ITEM3=[],
+                            ITEM4=[],
+                            ITEM5=[],
+                            ACC=[],
+                            ATK=[],
+                            HIT=[],
+                            CRIT=[],
+                            AVO=[],
+                            CEVA=[],
+                            SKILL1=[],
+                            SKILL2=[],
+                            SKILL3=[],
+                            SKILL4=[],
+                            SKILL5=[],
+                            SKILL6=[],
+                            SKILL7=[],
+                            SKILL8=[],
+                            ROW=[],
+                            COL=[],
+                            STATPACK=[],
+                            PNG=[],
+                            SAMPLE='TRUE')                            
                             
 @app.errorhandler(404)
 def page_not_found(error):
