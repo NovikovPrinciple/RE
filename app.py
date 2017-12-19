@@ -166,6 +166,14 @@ with open('static/sample2.csv', 'rb') as csvfile2:
 
 Gcolumns, Grows = translate(GColumn, GRow)
 
+Gterrain_list = []
+
+with open('static/terrain_gaiden.csv', 'rb') as terrainfile2:
+    rowreader4 = csv.reader(terrainfile2)
+    for i in range(0, 17):                                #use range(0, number of map rows)
+        Gterrain_list.append(rowreader4.next())
+
+Gterrain_list[0][0] = 'Plains'
     
 convoy_rows = []
 with open('static/convoy.csv', 'rb') as csvfile2:
@@ -228,8 +236,10 @@ def show_map():
                             ROW=Row,
                             COL=Column,
                             STATPACK=Statpack,
-                            PNG=is_PNG)
-
+                            PNG=is_PNG,
+                            terrain_list=[])
+                            
+                            
 @app.route('/gaiden')
 def show_gaiden():
     return render_template( 'map.html', 
@@ -269,7 +279,8 @@ def show_gaiden():
                             ROW=GRow,
                             COL=GColumn,
                             STATPACK=GStatpack,
-                            PNG=Gis_PNG)
+                            PNG=Gis_PNG,
+                            terrain_list=Gterrain_list)
                             
 @app.errorhandler(404)
 def page_not_found(error):

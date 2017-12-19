@@ -10,8 +10,15 @@
 		background-color: white;
 		z-index: 5;
 	}
+	.tooltip	{
+		background-color: white;
+		z-index: 5;
+	}
 	.value		{
 		font-weight: bold;
+	}
+	.map-tile	{
+		position: absolute;
 	}
 	</style>
 {% endblock %}
@@ -68,5 +75,20 @@
 				top: {{ ROW[loop.index0] + 5 }}px;
 				z-index: 5;{% endif %}">
 			{% endif %} 
+		{% endfor %}
+		{% for row in terrain_list %}
+			{% set outer_loop = loop %}
+			{% for column in row %}
+				<img src="/static/Blank.png" class="map-tile" data-toggle="tooltip" data-placement="right" data-html="true" data-container="body" data-delay="500"
+				title="{{ column }}<br>
+				{% if column == 'Mountains' %}Impassable, except for <strong>fliers</strong>
+				{% elif column == 'Fort' %}Avo: +20, Def: +2, Heal: 20%/turn
+				{% elif column == 'Forest' %}Avo: +15, Def: +1
+				{% elif column == 'Thicket' %}Avo: +10, Def: +0, Heal: 10%/turn
+				{% elif column == 'House' %}Avo: +10, Def: +0
+				{% else %}Avo: +0, Def: +0{% endif %}"
+				style="left: {{ ((loop.index + 18) % 18 * 50) + 10 }}px;
+				top: {{ (outer_loop.index * 50) +10 }}px;">
+			{% endfor %}
 		{% endfor %}
 {% endblock %}
