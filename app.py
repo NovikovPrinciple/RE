@@ -89,7 +89,6 @@ with open('static/1-2.csv', 'rb') as csvfile:
     rowreader = csv.reader(csvfile)
     rowreader.next()
     Characters = rowreader.next()
-    print 'Characters', Characters
     Class = rowreader.next()
     Max = rowreader.next()
     Current = rowreader.next()
@@ -101,30 +100,23 @@ with open('static/1-2.csv', 'rb') as csvfile:
     Def = rowreader.next()
     Res = rowreader.next()
     Move = rowreader.next()
-    print 'Move', Move
     Atk = rowreader.next()
     Hit = rowreader.next()
     Crit = rowreader.next()
     Avo = rowreader.next()
     CEva = rowreader.next()
     Item1 = rowreader.next()
-    print "Item 1", Item1
     Item2 = rowreader.next()
     Item3 = rowreader.next()
     Item4 = rowreader.next()
     Item5 = rowreader.next()
     Accessory = rowreader.next()
     Skill1 = rowreader.next()
-    print 'Skill 1', Skill1
     Skill2 = rowreader.next()
     Skill3 = rowreader.next()
-    print 'Skill 3', Skill3
     Skill4 = rowreader.next()
-    print 'Skill 4', Skill4
     Skill5 = rowreader.next()
-    print 'Skill 5', Skill5
     Skill6 = rowreader.next()
-    print 'Skill 6', Skill6
     Skill7 = rowreader.next()
     Skill8 = rowreader.next()
     Column = rowreader.next()
@@ -259,7 +251,7 @@ def show_map():
 @app.route('/gaiden')
 def show_gaiden():
     return render_template( 'map.html', 
-                            map='Gaiden rescaled.gif',
+                            map='1x.png',
                             TITLE='Chapter 1x',
                             character_list=GCharacters,
                             sprite=GClass,
