@@ -28,9 +28,9 @@
 			{% if ROW[loop.index0] %}
 			{# Note: The default sprite image type is GIF. If it's PNG, be sure to modify the
 			is_PNG row (the last row) of the appropriate CSV accordingly. #}
-			<img src="/static/sprites/{{ sprite[loop.index0] }}{% if PNG[loop.index0] == 'TRUE' %}.png{% else %}.gif{% endif %}" alt="Sample sprite" class="Sprite" data-toggle="popover" data-html="true"
+			<img src="/static/Blank.png" alt="Sample sprite" class="Sprite" data-toggle="popover" data-html="true"
 			data-content="
-				{{ character }}: {{ CURRENT[loop.index0] }}/{{ MAX[loop.index0] }}
+				<h4>{{ character }}</h4>: {{ CURRENT[loop.index0] }}/{{ MAX[loop.index0] }}
 				[Str <span class='value'>{{ STR[loop.index0] }}</span>]
 				[Mag <span class='value'>{{ MAG[loop.index0] }}</span>]
 				[Skl <span class='value'>{{ SKL[loop.index0] }}</span>]

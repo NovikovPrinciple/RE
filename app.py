@@ -85,9 +85,11 @@ def translate(columns, rows):
     
 
 # This one is for the main map:
-with open('static/sample.csv', 'rb') as csvfile:
+with open('static/1-2.csv', 'rb') as csvfile:
     rowreader = csv.reader(csvfile)
+    rowreader.next()
     Characters = rowreader.next()
+    print 'Characters', Characters
     Class = rowreader.next()
     Max = rowreader.next()
     Current = rowreader.next()
@@ -99,23 +101,30 @@ with open('static/sample.csv', 'rb') as csvfile:
     Def = rowreader.next()
     Res = rowreader.next()
     Move = rowreader.next()
+    print 'Move', Move
     Atk = rowreader.next()
     Hit = rowreader.next()
     Crit = rowreader.next()
     Avo = rowreader.next()
     CEva = rowreader.next()
     Item1 = rowreader.next()
+    print "Item 1", Item1
     Item2 = rowreader.next()
     Item3 = rowreader.next()
     Item4 = rowreader.next()
     Item5 = rowreader.next()
     Accessory = rowreader.next()
     Skill1 = rowreader.next()
+    print 'Skill 1', Skill1
     Skill2 = rowreader.next()
     Skill3 = rowreader.next()
+    print 'Skill 3', Skill3
     Skill4 = rowreader.next()
+    print 'Skill 4', Skill4
     Skill5 = rowreader.next()
+    print 'Skill 5', Skill5
     Skill6 = rowreader.next()
+    print 'Skill 6', Skill6
     Skill7 = rowreader.next()
     Skill8 = rowreader.next()
     Column = rowreader.next()
@@ -124,6 +133,13 @@ with open('static/sample.csv', 'rb') as csvfile:
     is_PNG = rowreader.next()
     
 columns, rows = translate(Column, Row)
+
+'''Terrain_list = []
+
+with open('static/terrain_gaiden.csv', 'rb') as terrainfile2:
+    rowreader4 = csv.reader(terrainfile2)
+    for i in range(0, 17):                                #use range(0, number of map rows)
+        Terrain_list.append(rowreader4.next())'''
     
 # This one's for the Gaiden:
 with open('static/sample2.csv', 'rb') as csvfile2:
@@ -200,10 +216,10 @@ def show_shop():
 @app.route('/map')
 def show_map():
     return render_template( 'map.html', 
-                            map='Extra rescaled.png',
-                            TITLE='Chapter 1',
+                            map='1-2 rescaled.png',
+                            TITLE='Chapter 1-2',
                             character_list=Characters,
-                            sprite=Class,
+                            sprite='Anna',
                             CURRENT=Current,
                             MAX=Max,
                             STR=Str,
@@ -236,7 +252,7 @@ def show_map():
                             ROW=Row,
                             COL=Column,
                             STATPACK=Statpack,
-                            PNG=is_PNG,
+                            PNG='TRUE',
                             terrain_list=[])
                             
                             
