@@ -182,6 +182,52 @@ with open('static/terrain_gaiden.csv', 'rb') as terrainfile2:
         Gterrain_list.append(rowreader4.next())
 
 Gterrain_list[0][0] = 'Plains'
+
+
+#And this one's for the Fog Map Gaiden:
+with open('static/sample3.csv', 'rb') as csvfile:
+    rowreader = csv.reader(csvfile)
+    FCharacters = rowreader.next()
+    FClass = rowreader.next()
+    FMax = rowreader.next()
+    FCurrent = rowreader.next()
+    FStr = rowreader.next()
+    FMag = rowreader.next()
+    FSkl = rowreader.next()
+    FSpd = rowreader.next()
+    FLck = rowreader.next()
+    FDef = rowreader.next()
+    FRes = rowreader.next()
+    FMove = rowreader.next()
+    FAtk = rowreader.next()
+    FHit = rowreader.next()
+    FCrit = rowreader.next()
+    FAvo = rowreader.next()
+    FCEva = rowreader.next()
+    FItem1 = rowreader.next()
+    FItem2 = rowreader.next()
+    FItem3 = rowreader.next()
+    FItem4 = rowreader.next()
+    FItem5 = rowreader.next()
+    FAccessory = rowreader.next()
+    FSkill1 = rowreader.next()
+    FSkill2 = rowreader.next()
+    FSkill3 = rowreader.next()
+    FSkill4 = rowreader.next()
+    FSkill5 = rowreader.next()
+    FSkill6 = rowreader.next()
+    FSkill7 = rowreader.next()
+    FSkill8 = rowreader.next()
+    FColumn = rowreader.next()
+    FRow = rowreader.next()
+    FStatpack = rowreader.next()
+    Fis_PNG = rowreader.next()
+
+Fcolumns, Frows = translate(FColumn, FRow)
+
+
+
+
     
 convoy_rows = []
 with open('static/convoy.csv', 'rb') as csvfile2:
@@ -289,6 +335,49 @@ def show_gaiden():
                             STATPACK=GStatpack,
                             PNG=Gis_PNG,
                             terrain_list=Gterrain_list)
+                            
+                            
+@app.route('/foggaiden')
+def show_fog():
+    return render_template( 'map.html', 
+                            map='1-1x rescaled.png',
+                            TITLE='Chapter 1-1x',
+                            character_list=FCharacters,
+                            sprite=FClass,
+                            CURRENT=FCurrent,
+                            MAX=FMax,
+                            STR=FStr,
+                            MAG=FMag,
+                            SKL=FSkl,
+                            SPD=FSpd,
+                            DEF=FDef,
+                            RES=FRes,
+                            LCK=FLck,
+                            MOV=FMove,
+                            ITEM1=FItem1,
+                            ITEM2=FItem2,
+                            ITEM3=FItem3,
+                            ITEM4=FItem4,
+                            ITEM5=FItem5,
+                            ACC=FAccessory,
+                            ATK=FAtk,
+                            HIT=FHit,
+                            CRIT=FCrit,
+                            AVO=FAvo,
+                            CEVA=FCEva,
+                            SKILL1=FSkill1,
+                            SKILL2=FSkill2,
+                            SKILL3=FSkill3,
+                            SKILL4=FSkill4,
+                            SKILL5=FSkill5,
+                            SKILL6=FSkill6,
+                            SKILL7=FSkill7,
+                            SKILL8=FSkill8,
+                            ROW=FRow,
+                            COL=FColumn,
+                            STATPACK=FStatpack,
+                            PNG=Fis_PNG,
+                            terrain_list=[])
                             
 @app.errorhandler(404)
 def page_not_found(error):
