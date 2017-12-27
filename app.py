@@ -187,6 +187,7 @@ Gterrain_list[0][0] = 'Plains'
 #And this one's for the Fog Map Gaiden:
 with open('static/sample3.csv', 'rb') as csvfile:
     rowreader = csv.reader(csvfile)
+    rowreader.next()
     FCharacters = rowreader.next()
     FClass = rowreader.next()
     FMax = rowreader.next()
@@ -254,7 +255,7 @@ def show_shop():
 @app.route('/map')
 def show_map():
     return render_template( 'map.html', 
-                            map='1-2 rescaled.png',
+                            map='1-2.png',
                             TITLE='Chapter 1-2',
                             character_list=Characters,
                             sprite='Anna',
@@ -341,7 +342,7 @@ def show_gaiden():
 def show_fog():
     return render_template( 'map.html', 
                             map='1-1x rescaled.png',
-                            TITLE='Chapter 1-1x',
+                            TITLE='Chapter 1-2x',
                             character_list=FCharacters,
                             sprite=FClass,
                             CURRENT=FCurrent,
