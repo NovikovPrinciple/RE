@@ -1,0 +1,33 @@
+User,Character,Primary Promo,Level (22.61),Movement,Ore,HP,Current HP,Str,Mag,Skl,Spd,Lck,Def,Res,Skill 1,Skill 2,Skill 3,Skill 4,Skill 5,Skill 6,Skill 7,Skill 8,Item 1,Item 2,Item 3,Item 4,Item 5,Accessory
+Appa,Jeffray,Monarch,27.61,8,,51,51,29,2,14,27,14,19,23,Elbow Room,Dual Striker,Quick Draw,Charisma,Savage Blow,Aether,,,Tyrannus,Clarent,Concoction(2),,,The Iron Crown
+Appa,Glenn,Bow Knight,22.61,8,,38,38,15,18,20,20,18,18,16,Good Fortune,Miracle,Strong Riposte,Rally Luck,Rally Skill,,,,Rishar,Iron Bow,Concoction(2),,,Protector's Shield
+Appa,Morigan,Maid / Butler,22.61,6,,36,36,20,20,24,15,21,12,15,Preparation,Heartseeker,Exploit,Malefic Aura,Live To Serve,,,,Velidan,Mend,Physic,Concoction(2),,Steward's Pin
+Artemi,Belladonna,Malig Knight,22.45,8,19,34,34,15,20,19,17,4,21,20,Strength +,Locktouch,Lunge,Movement +,Savage Blow,,,,Ebony Axe,Bell's Grimoire,Vulnerary(3),Steel Axe,Panacea(3),
+Artemi,Bethany,Derwydd Knight,23.07,8,62,35,35,10,23,16,21,10,18,21,Speed +,Tactical Advice,Relief,Solidarity,Rally Movement,,,,Orichalcum Lance,Thunder,Concoction(2),Door Key,Chest Key,
+August,August,General,21.97,5,19,49,49,23,0,20,6,21,26,19,Defense +,Even Keel,Natural Cover,Iron Will,Wary Fighter,,,,Oblivion Armament,Training Lance,Training Axe,,,
+August,Kate,Malig Knight,21.6,8,34,38,38,20,20,18,8,5,18,20,Strength +,Heartseeker,Lunge,Malefic Aura,Savage Blow,,,,Cursed Maw,Training Tome ,Training Axe,,,
+Excalibur,Bernard,Great Master,23.35,6,59,40,40,19,12,18,14,21,18,22,Miracle,Darting Blow,Rally Luck,Camaraderie,Renewal,,,,Bronze Bow,Mend,Heal,Rehabilitate,Physic,
+Excalibur,Felix,Mechanist,23.39,7,24,46,46,22,3,19,22,22,18,12,Potent Potion,Duelist Blow,Quick Salve,Vantage,Dismantle,,,,Steel Bow,Iron Bow,Wrist Launcher,Concoction(2),Sting Shuriken,
+Fossil,Albert,Witch/Warlock,22.59,6,19,35,35,4,26,23,21,21,7,20,Witch's Brew,Seal Defence,Bloody Sacrifice,Swap,Warp,,,,Fimbulvetr,Garnet Grimoire,,Wizard's Wind,,
+Fossil,Cheyenne,Assassin,22.9,6,62,39,39,20,7,24,25,10,21,11,Preparation,Elbow Room,Exploit,Shelter,Shadow Strike,,,,Steel Knife,Iron Bow,Iron Knife,,,
+Novikov,Laven,Adventurer,23.72,6,59,38,38,18,16,20,22,15,11,24,Locktouch,Resistance +,Movement +,Gentilhomme,Seal Precision,,,,Iron Bow,Heal,Sun Festal,Vulnerary(3),,
+Novikov,Tamlen,Spear Master / Halberdier,21.48,6,54,42,42,20,8,22,21,14,16,10,Seal Defence,Good Fortune,Swap,Strong Riposte,Seal Speed,,,,Steel Lance,Javelin,Concoction(2),,,
+Shocks McClocks,Demais,Master Ninja,23.25,6,67,34,34,18,5,24,26,19,7,25,Locktouch,Duelist Blow,Poison Strike,Vantage,Lethality,,,,Iron Sword,Iron Knife,Steel Knife,Vulnerary(3),Vulnerary(3),
+Shocks McClocks,Saltbeard,Berserker,23.56,6,25,49,49,29,0,21,23,16,17,4,HP +,Miracle,Gamble,Rally Luck,Rally Strength,,,,Iron Axe,Steel Axe,Coastal Marauder,Handaxe,,
+Turtle,Blant,Hero,22.98,6,67,43,43,24,0,24,18,14,21,8,Good Fortune,Seal Resistance,Strong Riposte,Toss,Sol,,,,Iron Sword,Iron Axe,Training Sword,Door Key,Glow,
+Turtle,Karen,Swordsmaster,21,6,50,42,42,20,12,21,24,9,13,12,Duelist Blow,Locktouch,Vantage,Poison Strike,Astra,,,,Iron Sword,Orichalcum Sword,Training Sword,Hostile Blade,Carving Knife,
+Accio,Vim To,Dark Knight,21.78,8,56,30,30,13,22,17,17,4,22,20,Heartseeker,Magic +,Malefic Aura,Future Sight,Soulfire,,,,Orichalcum Sword,Thunder,Vulnerary(3),Door Key,Domino,
+Accio,Arjun,Sniper,22.71,6,60,39,39,21,0,25,23,9,19,16,Skill +,Resistance +,Quick Draw,Gentilhomme,Certain Blow,,,,Dual Yumi,Iron Yumi,Vulnerary(3),,,
+PV,Hichi,Shifter,25,6,24,43,43,18,17,24,26,25,6,18,Evenhanded,Refresh,Beastbane,Inspiring Song,Grisly Wound,Voice Of Peace,,,Beaststone,Wildstone,Vulnerary(3),,,
+Appa,Brun,Dread Fighter,22.61,6,,37,37,21,6,19,22,8,16,22,Even Keel,Duelist Blow,Iron Will,Vantage,Clarity,,,,Hunting Knife,Hammer,Wyrmslayer,Concoction(2),Giant's Might,Guiding Charm
+Appa,Gisela,Merchant,25.61,6,,50,50,24,16,21,21,25,14,14,Potent Potion,Luck +,Quick Salve,Underdog,Profiteer,Expertise,Incense Burner,Line of death,Aurum,Crescent Glaive,Concoction(4),Duelist's Draft(4),Steadfast Vigor(4),Jolaripa's Sigil
+Appa,Mikaeus,Hero,22.61,6,,40,40,22,5,25,22,20,20,6,Good Fortune,Preparation,Strong Riposte,Exploit,Sol,,,,Sunrise Katana,Sunset Sword,Handaxe,Concoction(2),,Iron Bracers
+Appa,Damia,Onmyoji / Sage,27.61,6,,42,42,14,25,23,18,20,20,25,Miracle,Defense +,Rally Luck,Natural Cover,Rally Magic,Wary Fighter,Tomefaire,Pavise,Depit,Horse Spirit,Physic,Concoction(2),,Byrtdelin's Sigil
+Appa,Grace,Maid / Butler,22.61,6,,26,26,15,17,18,23,13,19,20,Resistance +,Strength +,Demoiselle,Lunge,Live To Serve,,,,Carving Knife,Mend,Restore,Concoction(2),,Wrestling Belt
+Appa,Rel To,Dark Knight,28.61,8,,43,43,24,26,22,10,16,27,25,Heartseeker,Locktouch,Malefic Aura,Poison Strike,Soulfire,Dismantle,Lifetaker,Replicate,Arnyek,Sunset Sword,Concoction(2),,Blue Gem,To's Sigil
+Appa,Lyf Vifo,Performer,22.61,6,,32,32,12,18,20,24,23,12,16,Refresh,Locktouch,Inspiring Song,Movement +,Voice Of Peace,,,,Malachite Naginata,Mend,Sun Festal,Concoction(2),,Puppet Strings
+Appa,Rel Two,Dark Knight,28.61,8,,43,43,24,26,22,10,16,27,25,Heartseeker,Locktouch,Malefic Aura,Poison Strike,Soulfire,Dismantle,Lifetaker,Replicate,Arnyek,Sunset Sword,Concoction(2),Giant's Might,Steadfast Vigor,To's Sigil
+Appa,Lyf Clone,Performer,22.61,6,,32,32,12,18,20,24,23,12,16,Refresh,Locktouch,Inspiring Song,Movement +,Voice Of Peace,,,,Malachite Naginata,Mend,Sun Festal,Concoction(2),,Puppet Strings
+Appa,Arthura,Saint,18.61,5,,27,27,15,19,18,16,24,7,19,Careful Encouragement,Tactical Advice,Magnanime,Solidarity,Staff-faire,,Inspiration,Rally Spectrum,Dindrane,Physic,Recover,Freeze,Rehabilitate,Penwyverns' Sigil
+Appa,Chalonna,Malig Knight,34.61,8,,49,49,27,28,25,22,5,26,25,Strength +,Witch's Brew,Lunge,Bloody Sacrifice,Savage Blow,Warp,Trample,,Varsagen,Solitas,Concoction(2),,,Black Guard
+Appa,Lucy,Swordsmaster,12.61,5,,29,29,12,0,13,19,16,7,8,Duelist Blow,Refresh,Vantage,Inspiring Song,,Voice Of Peace,,,Bronze Sword,Concoction(2),Panacea(3),Door Key,Warp Powder(3),Boots

@@ -1,96 +1,63 @@
-{% extends "base.html" %}
-{% block title %}{{ TITLE }}{% endblock %}
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
 {%block head %}
 	{{ super() }}
 	<style>
-	.PNGmap		{
-		z-index: -5;
-	}
-	.popover	{
-		background-color: white;
-		z-index: 5;
-	}
-	.tooltip	{
-		background-color: white;
-		z-index: 5;
-	}
-	.value		{
-		font-weight: bold;
-	}
-	.map-tile	{
-		position: absolute;
-	}
+		.GIFmap			{
+			position: absolute;
+			z-index: -5;
+		}
+		.popover		{
+			background-color: white;
+			z-index: 5;
+		}
+		.value			{
+			font-weight: bold;
+		}
 	</style>
 {% endblock %}
 {% block body %}
-	<img src="static/{{ map }}" alt="Deployment map" class="PNGmap">
+		<div class="GIFmap"><img src="/static/{{ MAPNAME }}" alt="Where's the map?"></div>
+		
 		{% for character in character_list %}
-			{% if ROW[loop.index0] %}
-			{# Note: The default sprite image type is GIF. If it's PNG, be sure to modify the
-			is_PNG row (the last row) of the appropriate CSV accordingly. #}
-			<img src="/static/Blank.png" alt="Sample sprite" class="Sprite" data-toggle="popover" data-html="true"
-			data-content="
-				<h4>{{ character }}</h4>{{ CURRENT[loop.index0] }}/{{ MAX[loop.index0] }}
-				[Str <span class='value'>{{ STR[loop.index0] }}</span>]
-				[Mag <span class='value'>{{ MAG[loop.index0] }}</span>]
-				[Skl <span class='value'>{{ SKL[loop.index0] }}</span>]
-				[Spd <span class='value'>{{ SPD[loop.index0] }}</span>]
-				[Lck <span class='value'>{{ LCK[loop.index0] }}</span>]
-				[Def <span class='value'>{{ DEF[loop.index0] }}</span>]
-				[Res <span class='value'>{{ RES[loop.index0] }}</span>]
-				[Mov <span class='value'>{{ MOV[loop.index0] }}</span>]<br>
-				
-				Inventory: {% if ITEM1[loop.index0] %}<strong>{{ ITEM1[loop.index0] }}</strong>{% endif %}
-				{% if ITEM2[loop.index0] %}{{ ITEM2[loop.index0] }}{% endif %}
-				{% if ITEM3[loop.index0] %}{{ ITEM3[loop.index0] }}{% endif %}
-				{% if ITEM4[loop.index0] %}{{ ITEM4[loop.index0] }}{% endif %}
-				{% if ITEM5[loop.index0] %}{{ ITEM5[loop.index0] }}{% endif %}<br>
-				
-				{% if ACC[loop.index0] %}Accessory: {{ ACC[loop.index0] }}<br>{% endif %}
-				
-				Atk: <span class='value'>{{ ATK[loop.index0] }}</span>,
-				Hit: <span class='value'>{{ HIT[loop.index0] }}</span>,
-				Crit: <span class='value'>{{CRIT[loop.index0] }}</span>,
-				Avo: <span class='value'>{{ AVO[loop.index0] }}</span>,
-				CEva: <span class='value'>{{ CEVA[loop.index0] }}</span><br>
-				
-				Skills: {% if SKILL1[loop.index0] %}<span class='skill'>[{{ SKILL1[loop.index0] }}]</span>{% endif %}
-				{% if SKILL2[loop.index0] %}<span class='skill'>[{{ SKILL2[loop.index0] }}]</span>{% endif %}
-				{% if SKILL3[loop.index0] %}<span class='skill'>[{{ SKILL3[loop.index0] }}]</span>{% endif %}
-				{% if SKILL4[loop.index0] %}<span class='skill'>[{{ SKILL4[loop.index0] }}]</span>{% endif %}
-				{% if SKILL5[loop.index0] %}<span class='skill'>[{{ SKILL5[loop.index0] }}]</span>{% endif %}
-				{% if SKILL6[loop.index0] %}<span class='skill'>[{{ SKILL6[loop.index0] }}]</span>{% endif %}
-				{% if SKILL7[loop.index0] %}<span class='skill'>[{{ SKILL7[loop.index0] }}]</span>{% endif %}
-				{% if SKILL8[loop.index0] %}<span class='skill'>[{{ SKILL8[loop.index0] }}]</span>{% endif %}"
-				
-				{# Sprites appear at the bottom-left part of map spaces by default. 
-				"Statpack" sprites in Pair-ups show up behind those sprites, towards the upper-right of map spaces. #}
-				style="height: 45px;
-				width: 45px; 
-				position: absolute; 
-				{% if STATPACK[loop.index0] == 'TRUE' %}
-				left: {{ COL[loop.index0] + 10 }}px;
-				top: {{ ROW[loop.index0] - 10 }}px;
-				z-index: 3;
+			<img class="sprite" src="/static/Blank.png" alt="Where's Anna?" class="Sprite" data-toggle="popover" data-html="true"
+			data-content="<h4>{{ character.name }}, {{ character.class_name }}</h4>
+			<span class='value'>{{ character.current_HP }}</span> / {{ character.max_HP }} 
+			[Str <span class='value'>{{ character.strength }}</span>]
+			[Mag <span class='value'>{{ character.magic }}</span>]
+			[Skl <span class='value'>{{ character.skill }}</span>]
+			[Spd <span class='value'>{{ character.speed }}</span>]
+			[Lck <span class='value'>{{ character.luck }}</span>]
+			[Def <span class='value'>{{ character.defense }}</span>]
+			[Res <span class='value'>{{ character.resistance }}</span>]
+			[Mov <span class='value'>{{ character.movement }}</span>]<br>
+			
+			Inventory:
+			{% for item in character.items %}
+				{% if item == character.items[0] %}
+					(<strong>{{ item.name }}</strong>)
 				{% else %}
-				left: {{ COL[loop.index0] - 5 }}px;
-				top: {{ ROW[loop.index0] + 5 }}px;
-				z-index: 5;{% endif %}">
-			{% endif %} 
-		{% endfor %}
-		{% for row in terrain_list %}
-			{% set outer_loop = loop %}
-			{% for column in row %}
-				<img src="/static/Blank.png" class="map-tile" data-toggle="tooltip" data-placement="right" data-html="true" data-container="body" data-delay="500"
-				title="{{ column }}<br>
-				{% if column == 'Mountains' %}Impassable, except for <strong>fliers</strong>
-				{% elif column == 'Fort' %}Avo: +20, Def: +2, Heal: 20%/turn
-				{% elif column == 'Forest' %}Avo: +15, Def: +1
-				{% elif column == 'Thicket' %}Avo: +10, Def: +0, Heal: 10%/turn
-				{% elif column == 'House' %}Avo: +10, Def: +0
-				{% else %}Avo: +0, Def: +0{% endif %}"
-				style="left: {{ ((loop.index + 18) % 18 * 50) + 10 }}px;
-				top: {{ (outer_loop.index * 50) +10 }}px;">
+					({{ item.name }})
+				{% endif %}
 			{% endfor %}
+			<br>
+			{% for skill in character.skills %}
+				[{{ skill.name }}]
+			{% endfor %}
+			<br>
+			Atk: <span class='value'>{{ character.atk }}</span>,
+			Hit: <span class='value'>{{ character.hit }}</span>,
+			Crit: <span class='value'>{{ character.crit }}</span>,
+			Avo: <span class='value'>{{ character.avo }}</span>,
+			CEva: <span class='value'>{{ character.ceva }}</span>
+			"
+			style="position: absolute;
+			height: 45px;
+			width: 45px;
+			top: {{ 50 * character.on_tile.tile_row + 10}}px;
+			left: {{50 * character.on_tile.tile_column + 10}}px;
+			z-index: 5;">
 		{% endfor %}
+		
+		
 {% endblock %}

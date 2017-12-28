@@ -1,0 +1,16 @@
+﻿Terrain,Avo,Def,Res,Heal/Turn,Foot Cost,Beast Cost,Mage Cost,Mount (T1) Cost,Mount (T2) Cost,Flier Cost,Other Notes
+Plains,0,0,0,0,1,1,1,1,1,1,
+Tile,0,0,0,0,1,1,1,1,1,1,
+Road,0,0,0,0,1,1,1,1,1,1,
+Sand,5,0,0,0,2,2,1,2,2,1,
+Forest,15,1,0,0,2,2,2,3,3,1,
+Fort,20,2,0,20%,2,2,2,3,3,1,
+Thicket,10,0,0,10%,2,2,2,3,3,1,
+Building,10,0,0,0,1,1,1,1,1,1,
+Stairs,10,0,0,0,1,1,1,1,1,1,
+Pillar,10,0,0,0,1,1,1,1,1,1,
+Water,0,0,0,0,999,999,999,999,999,1,Flier Only. Cannot be swapped onto by non fliers
+Mountains,0,0,0,0,999,999,999,999,999,1,Flier Only. Cannot be swapped onto by non fliers
+House,10,0,0,0,1,1,1,1,1,1,
+Wall,0,0,0,0,999,999,999,999,999,999,
+Throne,0,0,0,0,999,999,999,999,999,999,

@@ -1,0 +1,70 @@
+﻿Name,Class,Max HP,Current HP,Str,Mag,Skl,Spd,Lck,Def,Res,Move,Atk,Hit,Crit,Avo,Ceva,Item1,,,,,Accessory,Skill 1,,,,,,,Skill 8,Column,Row
+Jericho,Adventurer,55,55,32,36,32,39,32,30,40,6,43,152,19,83,21,Steel Bow,Dual Yumi,Silence,Freeze,Elixir(1),Trickshot,Preparation,Movement +,Exploit,Seal Precision,Live To Serve,Pass,Tomebreaker,,L,8
+Gwyllgi 1,Gwyllgi,25,0,18,0,15,30,20,10,10,7,24,128,6,70,10,Fiery Fang,,,,,,Darting Blow,,,,,,,,,
+Gwyllgi 2,Gwyllgi,25,0,18,0,15,30,20,10,10,7,24,128,6,70,10,Fiery Fang,Vulnerary(3),,,,,Darting Blow,,,,,,,,,
+Maelduin 1,Maelduin,30,1,22,0,13,20,12,16,10,8,28,109,5,39,26,Bronze Axe,,,,,,,,,,,,,,,
+Maelduin 2,Maelduin,30,30,22,0,13,20,12,16,10,8,28,109,5,39,26,Bronze Axe,Vulnerary(3),,,,,,,,,,,,,,
+Revnant 1,Revnant,30,0,20,0,14,19,30,17,17,6,27,124,5,52,25,Rotten Claw,,,,,,,,,,,,,,,
+Revnant 2,Revnant,30,30,20,0,14,19,30,17,17,6,27,124,5,52,25,Rotten Claw,Vulnerary(3),,,,,,,,,,,,,J,7
+Revnant 3,Revnant,30,24,20,-2,14,19,30,14,14,6,27,124,5,52,25,Rotten Claw,,,,,,,,,,,,,,,
+Medusa 1,Medusa,30,30,0,21,27,12,15,13,24,6,28,137,12,29,8,Evil Eye,Petrify,,,,,Seal Defence,Seal Resistance,,,,,,,L,6
+Medusa 2,Medusa,30,30,0,21,27,12,15,13,24,6,28,137,12,29,8,Evil Eye,Petrify,Vulnerary(3),,,,Seal Defence,Seal Resistance,,,,,,,F,10
+Medusa 3,Medusa,30,30,0,21,27,12,15,13,24,6,28,137,12,29,8,Evil Eye,Petrify,,,,,Seal Defence,Seal Resistance,,,,,,,C,12
+Arch Mogall 1,Arch Mogall,25,25,18,18,23,22,12,7,13,7,25,129,10,42,6,Evil Eye,,,,,,,,,,,,,,P,2
+Arch Mogall 2,Arch Mogall,25,25,18,18,23,22,12,7,13,7,25,129,10,42,6,Evil Eye,Vulnerary(3),,,,,,,,,,,,,P,4
+Arch Mogall 3,Arch Mogall,25,25,18,18,23,22,12,7,13,7,25,129,10,42,6,Evil Eye,Eyes Like Daggers,,,,,Inevitable End,,,,,,,,L,11
+Arch Mogall 4,Arch Mogall,25,25,18,18,23,22,12,7,13,7,25,129,10,42,6,Evil Eye,,,,,,,,,,,,,,A,16
+Arch Mogall 5,Arch Mogall,25,25,18,18,23,22,12,7,13,7,25,129,10,42,6,Evil Eye,Concoction(2),,,,,,,,,,,,,C,16
+Deathgoyle 1,Deathgoyle,30,30,21,0,15,21,12,14,9,8,26,122,6,41,26,Bronze Lance,,,,,,,,,,,,,,O,3
+Deathgoyle 2,Deathgoyle,30,30,21,0,15,21,12,14,9,8,26,122,6,41,26,Bronze Lance,,,,,,,,,,,,,,Q,3
+Deathgoyle 3,Deathgoyle,30,30,21,0,15,21,12,14,9,8,26,122,6,41,26,Bronze Lance,Concoction(2),,,,,,,,,,,,,E,7
+Deathgoyle 4,Deathgoyle,30,30,21,0,15,21,12,14,9,8,25,107,6,31,6,Bronze Lance,Merciful Bow,,,,,,,,,,,,,B,15
+Deathgoyle 5,Deathgoyle,30,30,21,0,15,21,12,14,9,8,26,122,6,41,26,Bronze Lance,Vulnerary(3),,,,,,,,,,,,,B,17
+Stone Golem 1,Stone Golem,40,40,23,0,15,0,15,25,7,5,28,144,-4,1,18,Boulder,Elixir(1),,,,,,,,,,,,,H,9
+Cyclops 1,Cyclops,40,40,40,0,10,15,5,15,7,6,46,94,33,27,3,Iron Club,,,,,,,,,,,,,,H,7
+Cyclops 2,Cyclops,40,40,40,0,10,15,5,15,7,6,46,94,33,27,3,Iron Club,Vulnerary(3),,,,,,,,,,,,,I,13
+Wight 1,Wight,35,35,20,12,17,20,14,16,12,6,24,137,7,41,27,Bronze Sword,,,,,,,,,,,,,,,
+Wight 2,Wight,35,35,20,12,17,20,14,16,12,6,24,117,7,41,7,Bronze Sword,Iron Shuriken,,,,,Inevitable End,,,,,,,,,
+Wight 3,Wight,35,35,20,12,17,20,14,16,12,6,24,137,7,41,27,Bronze Sword,,,,,,,,,,,,,,O,10
+Deadeye 1,Deadeye,30,30,22,10,19,20,15,14,10,6,28,130,8,41,28,Bronze Bow,,,,,,,,,,,,,,A,8
+Deadeye 2,Deadeye,30,30,22,10,19,20,15,14,10,6,28,130,8,41,28,Bronze Bow,Vulnerary(3),,,,,,,,,,,,,M,15
+?,Witch,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,P,16
+Tenderfist 1,Shifter,30,30,15,0,17,23,15,10,11,6,20,122,7,51,8,Beastcharm,,,,,,Certain Riposte,,,,,,,,,
+Tenderfist 2,Shifter,30,30,15,0,17,23,15,10,11,6,20,122,7,51,8,Beastcharm,,,,,,Certain Riposte,,,,,,,,,
+Tenderfist 3,Shifter,30,30,15,0,17,23,15,10,11,6,20,122,7,51,8,Beastcharm,,,,,,Certain Riposte,,,,,,,,N,
+Tenderfist 4,Shifter,30,30,15,0,17,23,15,10,11,6,20,122,7,51,8,Beastcharm,,,,,,Certain Riposte,,,,,,,,,
+Tenderfist 5,Shifter,30,30,15,0,17,23,15,10,11,6,20,122,7,51,8,Beastcharm,,,,,,Certain Riposte,,,,,,,,,
+Hushmage 1,Basara,30,30,0,15,17,19,15,11,10,6,16,137,7,50,18,Ember,,,,,,Certain Riposte,,,,,,,,,
+Hushmage 2,Basara,30,30,0,15,17,19,15,11,10,6,16,137,7,50,18,Ember,,,,,,Certain Riposte,,,,,,,,,
+Hushmage 3,Basara,30,30,0,15,17,19,15,11,10,6,16,137,7,50,18,Ember,,,,,,Certain Riposte,,,,,,,,,
+Hushmage 4,Basara,30,30,0,15,17,19,15,11,10,6,16,137,7,50,18,Ember,,,,,,Certain Riposte,,,,,,,,,
+Hushmage 5,Basara,30,30,0,15,17,19,15,11,10,6,16,137,7,50,18,Ember,,,,,,Certain Riposte,,,,,,,,,
+Jazargo,Werefolk,50,50,0,0,28,21,14,16,13,6,9,133,12,43,17,Beastrune,,,,,,Lifetaker+,Certain Riposte,Certain Blow,Warding Riposte,Armored Riposte,,,,,
+Hussar,General,60,60,23,0,16,26,19,18,15,6,28,113,6,53,10,Raider Naginata,Raider Axe,Elixir(1),Rabbit's Foot,,Marshal's Banner,Hone Armor,Quick Riposte,Vantage,Nihil,Fortune,Movement +,Refresh,,G,2
+General 1,General,45,45,18,18,19,13,18,14,14,5,25,108,8,34,9,Raider Axe,Orichalcum Lance,,,,,Ward Armor,Vantage,,,,,,,F,2
+General 2,General,45,45,18,18,19,13,18,14,14,5,25,108,8,34,9,Raider Axe,Raider Naginata,,,,,Ward Armor,Vantage,,,,,,,H,2
+General 3,General,45,45,18,18,19,13,18,14,14,5,23,118,8,34,9,Raider Naginata,Orichalcum Axe,1000g,,,,Ward Armor,Vantage,,,,,,,G,3
+General 4,General,45,45,18,18,19,13,18,14,14,5,25,123,8,34,9,Orichalcum Lance,Orichalcum Axe,,,,,Ward Armor,Vantage,,,,,,,F,5
+General 5,General,45,45,18,18,19,13,18,14,14,5,25,108,8,34,9,Raider Axe,Orichalcum Lance,,,,,Ward Armor,Vantage,,,,,,,H,5
+General 6,General,45,45,18,18,19,13,18,14,14,5,25,108,8,34,9,Raider Axe,Raider Naginata,550g,,,,Ward Armor,Vantage,,,,,,,G,6
+General 7,General,45,45,18,18,19,13,18,14,14,5,23,118,8,34,9,Raider Naginata,Orichalcum Axe,,,,,Ward Armor,Vantage,,,,,,,F,10
+General 8,General,45,45,18,18,19,13,18,14,14,5,25,123,8,34,9,Orichalcum Lance,Orichalcum Axe,,,,,Ward Armor,Vantage,,,,,,,H,10
+General 9,General,45,45,18,18,19,13,18,14,14,5,25,108,8,34,9,Raider Axe,Orichalcum Lance,Lazuli Knife,,,,Ward Armor,Vantage,,,,,,,F,12
+General 10,General,45,45,18,18,19,13,18,14,14,5,25,108,8,34,9,Raider Axe,Raider Naginata,,,,,Ward Armor,Vantage,,,,,,,H,12
+General 11,General,45,45,18,18,19,13,18,14,14,5,23,118,8,34,9,Raider Naginata,Orichalcum Axe,,,,,Ward Armor,Vantage,,,,,,,A,18
+General 12,General,45,45,18,18,19,13,18,14,14,5,25,123,8,34,9,Orichalcum Lance,Orichalcum Axe,Giant's Might,,,,Ward Armor,Vantage,,,,,,,M,18
+Great Knight 1,Great Knight,40,40,16,16,19,12,18,13,13,7,21,128,8,32,9,Raider Katana,Iron Javelin,Ebony Axe,,,,Goad Armor,Swordfaire,,,,,,,A,1
+Great Knight 2,Great Knight,40,40,16,16,19,12,18,13,13,7,21,118,8,32,9,Raider Naginata,Iron Star Axe,Ebony Sword,,,,Goad Armor,Lancefaire,,,,,,,G,1
+Great Knight 3,Great Knight,40,40,16,16,19,12,18,13,13,7,23,108,8,32,9,Raider Axe,Iron Kodachi,Ebony Lance,Adamant Club,,,Goad Armor,Axefaire,,,,,,,M,1
+Great Knight 4,Great Knight,40,40,16,16,19,12,18,13,13,7,21,128,8,32,9,Raider Katana,Iron Javelin,Ebony Axe,,,,Goad Armor,Swordfaire,,,,,,,G,5
+Great Knight 5,Great Knight,40,40,16,16,19,12,18,13,13,7,21,118,8,32,9,Raider Naginata,Iron Star Axe,Ebony Sword,,,,Goad Armor,Lancefaire,,,,,,,G,11
+Griffon Knight 1,Griffon Knight,35,35,15,16,25,20,17,14,8,8,26,126,11,38,9,Steel Bow,Orichalcum Lance,,,,,Duelist Riposte,,,,,,,,B,3
+Griffon Knight 2,Griffon Knight,35,35,16,15,25,20,17,14,8,8,26,126,11,38,9,Ebony Bow,Iron Lance,,,,,Duelist Riposte,,,,,,,,L,3
+Derwydd Knight 1,Derwydd Knight,25,25,0,19,26,23,17,8,14,10,24,127,36,38,9,Mjolnir,1500g,,,,,Death Blow,,,,,,,,A,4
+Derwydd Knight 2,Derwydd Knight,25,25,19,0,26,23,17,14,8,10,24,127,36,38,9,Jarnbjorn,,,,,,Death Blow,,,,,,,,M,4
+Wyvern Lord 1,Wyvern Lord,40,40,24,0,21,18,11,17,3,8,31,120,9,35,6,Iron Lance,Handaxe,,,,,Armored Blow,,,,,,,,C,4
+Wyvern Lord 2,Wyvern Lord,40,40,24,0,21,18,11,17,3,8,32,110,9,35,6,Iron Axe,Javelin,,,,,Armored Blow,,,,,,,,K,4
+Wyvern Lord 3,Wyvern Lord,40,40,24,0,21,18,11,17,3,8,32,110,9,35,6,Iron Axe,Javelin,Wrestling Belt,,,,Armored Blow,,,,,,,,B,14
+Wyvern Lord 4,Wyvern Lord,40,40,24,0,21,18,11,17,3,8,31,120,9,35,6,Iron Lance,Handaxe,,,,,Armored Blow,,,,,,,,L,14
+Falcon Knight 1,Falcon Knight,30,30,16,15,18,21,20,10,18,8,22,122,7,47,10,Iron Naginata,Sun Festal,Rescue,,,,Guidance,,,,,,,,D,1
+Falcon Knight 2,Falcon Knight,30,30,16,15,18,21,20,10,18,8,22,122,7,47,10,Iron Naginata,Sun Festal,Rescue,1200g,,,Guidance,,,,,,,,J,1

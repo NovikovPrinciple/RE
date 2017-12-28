@@ -1,385 +1,164 @@
-from flask import Flask, url_for, render_template
-import csv
+from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tmp/team_o.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
-column_translate = {   
-                    'A':55,
-                    'B':105,
-                    'C':155,
-                    'D':205,
-                    'E':255,
-                    'F':305,
-                    'G':355,
-                    'H':405,
-                    'I':455,
-                    'J':505,
-                    'K':555,
-                    'L':605,
-                    'M':655,
-                    'N':705,
-                    'O':755,
-                    'P':805,
-                    'Q':855,
-                    'R':905,
-                    'S':955,
-                    'T':1005,
-                    'U':1055,
-                    'V':1105,
-                    'W':1155,
-                    'X':1205,
-                    'Y':1255,
-                    'Z':1305,
-                    'AA':1355
-                    
-                }
-row_translate = {
-                    '1':55,
-                    '2':105,
-                    '3':155,
-                    '4':205,
-                    '5':255,
-                    '6':305,
-                    '7':355,
-                    '8':405,
-                    '9':455,
-                    '10':505,
-                    '11':555,
-                    '12':605,
-                    '13':655,
-                    '14':705,
-                    '15':755,
-                    '16':805,
-                    '17':855,
-                    '18':905,
-                    '19':955,
-                    '20':1005,
-                    '21':1055,
-                    '22':1105,
-                    '23':1155,
-                    '24':1205
-                }
+engine = create_engine('sqlite:///tmp/team_o.db')
+session = sessionmaker()
+session.configure(bind=engine)
 
 
 
-def translate(columns, rows):
-    for i in range(0, len(columns)):
-        try:
-            if columns[i] == 'Column' or columns[i] == '':
-                continue
-            columns[i] = column_translate[columns[i]]
-        except:
-            if KeyError:
-                continue
-
-    for i in range(0, len(rows)):
-        try:
-            if rows[i] == 'Row' or rows[i] == '':
-                continue
-            rows[i] = row_translate[rows[i]]
-        except:
-            if KeyError:
-                continue
-    return columns, rows
+inventory = db.Table('inventory', 
+    db.Column('id_Character', db.Integer, db.ForeignKey('character.id')),
+    db.Column('id_Item', db.Integer, db.ForeignKey('item.id'))
+    )
     
     
+CharacterSkill = db.Table('CharacterSkill',
+    db.Column('id_Character', db.Integer, db.ForeignKey('character.id'), primary_key=True),
+    db.Column('id_Skill', db.Integer, db.ForeignKey('skill.id'), primary_key=True)
+    )    
 
-# This one is for the main map:
-with open('static/1-2.csv', 'rb') as csvfile:
-    rowreader = csv.reader(csvfile)
-    rowreader.next()
-    Characters = rowreader.next()
-    Class = rowreader.next()
-    Max = rowreader.next()
-    Current = rowreader.next()
-    Str = rowreader.next()
-    Mag = rowreader.next()
-    Skl = rowreader.next()
-    Spd = rowreader.next()
-    Lck = rowreader.next()
-    Def = rowreader.next()
-    Res = rowreader.next()
-    Move = rowreader.next()
-    Atk = rowreader.next()
-    Hit = rowreader.next()
-    Crit = rowreader.next()
-    Avo = rowreader.next()
-    CEva = rowreader.next()
-    Item1 = rowreader.next()
-    Item2 = rowreader.next()
-    Item3 = rowreader.next()
-    Item4 = rowreader.next()
-    Item5 = rowreader.next()
-    Accessory = rowreader.next()
-    Skill1 = rowreader.next()
-    Skill2 = rowreader.next()
-    Skill3 = rowreader.next()
-    Skill4 = rowreader.next()
-    Skill5 = rowreader.next()
-    Skill6 = rowreader.next()
-    Skill7 = rowreader.next()
-    Skill8 = rowreader.next()
-    Column = rowreader.next()
-    Row = rowreader.next()
-    Statpack = rowreader.next()
-    is_PNG = rowreader.next()
+
+class TerrainUnitType(db.Model):
+    __tablename__ = 'terrain_unittype'
+    id = db.Column(db.Integer, primary_key=True)
+    id_Terrain = db.Column(db.Integer, db.ForeignKey('terrain.id'), unique=False, nullable=False)
+    id_Unit_Type = db.Column(db.Integer, db.ForeignKey('unit_type.id'), unique=False, nullable=False)
+    cost = db.Column(db.Integer, unique=False, nullable=False)
     
-columns, rows = translate(Column, Row)
-
-'''Terrain_list = []
-
-with open('static/terrain_gaiden.csv', 'rb') as terrainfile2:
-    rowreader4 = csv.reader(terrainfile2)
-    for i in range(0, 17):                                #use range(0, number of map rows)
-        Terrain_list.append(rowreader4.next())'''
     
-# This one's for the Gaiden:
-with open('static/sample2.csv', 'rb') as csvfile2:
-    rowreader = csv.reader(csvfile2)
-    GCharacters = rowreader.next()
-    GClass = rowreader.next()
-    GMax = rowreader.next()
-    GCurrent = rowreader.next()
-    GStr = rowreader.next()
-    GMag = rowreader.next()
-    GSkl = rowreader.next()
-    GSpd = rowreader.next()
-    GLck = rowreader.next()
-    GDef = rowreader.next()
-    GRes = rowreader.next()
-    GMove = rowreader.next()
-    GAtk = rowreader.next()
-    GHit = rowreader.next()
-    GCrit = rowreader.next()
-    GAvo = rowreader.next()
-    GCEva = rowreader.next()
-    GItem1 = rowreader.next()
-    GItem2 = rowreader.next()
-    GItem3 = rowreader.next()
-    GItem4 = rowreader.next()
-    GItem5 = rowreader.next()
-    GAccessory = rowreader.next()
-    GSkill1 = rowreader.next()
-    GSkill2 = rowreader.next()
-    GSkill3 = rowreader.next()
-    GSkill4 = rowreader.next()
-    GSkill5 = rowreader.next()
-    GSkill6 = rowreader.next()
-    GSkill7 = rowreader.next()
-    GSkill8 = rowreader.next()
-    GColumn = rowreader.next()
-    GRow = rowreader.next()
-    GStatpack = rowreader.next()
-    Gis_PNG = rowreader.next()
-
-Gcolumns, Grows = translate(GColumn, GRow)
-
-Gterrain_list = []
-
-with open('static/terrain_gaiden.csv', 'rb') as terrainfile2:
-    rowreader4 = csv.reader(terrainfile2)
-    for i in range(0, 17):                                #use range(0, number of map rows)
-        Gterrain_list.append(rowreader4.next())
-
-Gterrain_list[0][0] = 'Plains'
-
-
-#And this one's for the Fog Map Gaiden:
-with open('static/sample3.csv', 'rb') as csvfile:
-    rowreader = csv.reader(csvfile)
-    rowreader.next()
-    FCharacters = rowreader.next()
-    FClass = rowreader.next()
-    FMax = rowreader.next()
-    FCurrent = rowreader.next()
-    FStr = rowreader.next()
-    FMag = rowreader.next()
-    FSkl = rowreader.next()
-    FSpd = rowreader.next()
-    FLck = rowreader.next()
-    FDef = rowreader.next()
-    FRes = rowreader.next()
-    FMove = rowreader.next()
-    FAtk = rowreader.next()
-    FHit = rowreader.next()
-    FCrit = rowreader.next()
-    FAvo = rowreader.next()
-    FCEva = rowreader.next()
-    FItem1 = rowreader.next()
-    FItem2 = rowreader.next()
-    FItem3 = rowreader.next()
-    FItem4 = rowreader.next()
-    FItem5 = rowreader.next()
-    FAccessory = rowreader.next()
-    FSkill1 = rowreader.next()
-    FSkill2 = rowreader.next()
-    FSkill3 = rowreader.next()
-    FSkill4 = rowreader.next()
-    FSkill5 = rowreader.next()
-    FSkill6 = rowreader.next()
-    FSkill7 = rowreader.next()
-    FSkill8 = rowreader.next()
-    FColumn = rowreader.next()
-    FRow = rowreader.next()
-    FStatpack = rowreader.next()
-    Fis_PNG = rowreader.next()
-
-Fcolumns, Frows = translate(FColumn, FRow)
-
-
-
-
+class TerrainMap(db.Model):
+    __tablename__ = 'terrainmap'
+    id = db.Column(db.Integer, primary_key=True)
+    id_Terrain = db.Column(db.Integer, db.ForeignKey('terrain.id'), unique=False, nullable=False)
+    id_Map = db.Column(db.Integer, db.ForeignKey('map.id'), unique=False, nullable=False)
+    tile_column = db.Column(db.Integer, unique=False, nullable=False)
+    tile_row = db.Column(db.Integer, unique=False, nullable=False)
     
-convoy_rows = []
-with open('static/convoy.csv', 'rb') as csvfile2:
-    rowreader2 = csv.reader(csvfile2)
-    rowreader2.next()
-    for row in rowreader2:
-        convoy_rows.append(row)
+    occupants = db.relationship('Character', backref='on_tile')
+
+
+class Player(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30), unique=True, nullable=False)
+    gold = db.Column(db.Integer, unique=False, nullable=False)
+    
+    characters = db.relationship('Character', backref='player')
+    
+    
+class Unit_Type(db.Model):
+    __tablename__ = 'unit_type'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, unique=True, nullable=False)
+    
+    characters = db.relationship('Character', backref='is_type')
+    terrain_cost = db.relationship('TerrainUnitType', backref='for_unit')
+    
+    
+class Terrain(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(15), unique=True, nullable=False)
+    avo_bonus = db.Column(db.Integer, unique=False, nullable=False)
+    def_bonus = db.Column(db.Integer, unique=False, nullable=False)
+    res_bonus = db.Column(db.Integer, unique=False, nullable=False)
+    heal_per_turn = db.Column(db.String(15), unique=False, nullable=False)
+    
+    costs = db.relationship('TerrainUnitType', backref='on_terrain')
+    tile = db.relationship('TerrainMap', backref='tile_terrain')
+    
+    
+class Map(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(15), unique=True, nullable=False)
+    total_columns = db.Column(db.Integer, unique=False, nullable=True)
+    total_rows = db.Column(db.Integer, unique=False, nullable=True)
+    
+    tile = db.relationship('TerrainMap', backref='source_map')
     
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return render_template('index.html')
+class Skill(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30), unique=True, nullable=False)
+    description = db.Column(db.String(100), unique=True, nullable=True)
+
     
-@app.route('/convoy')
-def show_convoy():
-    return render_template( 'convoy.html',
-                            ROWS=convoy_rows)
+class Item(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30), unique=True, nullable=False)
+    type = db.Column(db.String(15), unique=False, nullable=True)
+    attack_stat = db.Column(db.String(15), unique=False, nullable=True)
+    rank = db.Column(db.String(5), unique=False, nullable=True)
+    might = db.Column(db.Integer, unique=False, nullable=True)
+    uses = db.Column(db.Integer, unique=False, nullable=True)
+    hit = db.Column(db.Integer, unique=False, nullable=True)
+    crit = db.Column(db.Integer, unique=False, nullable=True)
+    crit_percent_mod = db.Column(db.String(15), unique=False, nullable=True)
+    crit_damage_mod = db.Column(db.String(15), unique=False, nullable=True)
+    avo = db.Column(db.Integer, unique=False, nullable=True)
+    ceva = db.Column(db.Integer, unique=False, nullable=True)
+    range = db.Column(db.String(15), unique=False, nullable=True)
+    hp_mod = db.Column(db.Integer, unique=False, nullable=True)
+    str_mod = db.Column(db.Integer, unique=False, nullable=True)
+    mag_mod = db.Column(db.Integer, unique=False, nullable=True)
+    skl_mod = db.Column(db.Integer, unique=False, nullable=True)
+    spd_mod = db.Column(db.Integer, unique=False, nullable=True)
+    lck_mod = db.Column(db.Integer, unique=False, nullable=True)
+    def_mod = db.Column(db.Integer, unique=False, nullable=True)
+    res_mod = db.Column(db.Integer, unique=False, nullable=True)
+    e_spd_off = db.Column(db.Integer, unique=False, nullable=True)
+    e_spd_def = db.Column(db.Integer, unique=False, nullable=True)
+    gem_slots = db.Column(db.Integer, unique=False, nullable=True)
+    reverse_WT = db.Column(db.String(15), unique=False, nullable=True)
+    double_WT = db.Column(db.String(15), unique=False, nullable=True)
+    ineffective = db.Column(db.String(15), unique=False, nullable=True)
+    cost = db.Column(db.Integer, unique=False, nullable=True)
+    effect = db.Column(db.String(100), unique=False, nullable=True)
+    in_shop = db.Column(db.String(15), unique=False, nullable=True)
+    stock_in_shop = db.Column(db.Integer, unique=False, nullable=True)
+    in_convoy = db.Column(db.String(15), unique=False, nullable=True)
+    stock_in_convoy = db.Column(db.Integer, unique=False, nullable=True)
+
     
-@app.route('/shop')
-def show_shop():
-    return 'Anna is opening up shop soon. Please wait a while.'
+class Character(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30), unique=True, nullable=False)
+    class_name = db.Column(db.String(30), unique=False, nullable=False)
+    level = db.Column(db.String(15), unique=False, nullable=True)
+    id_Player = db.Column(db.Integer, db.ForeignKey('player.id'), unique=False, nullable=True)
+    id_Unit_Type = db.Column(db.Integer, db.ForeignKey('unit_type.id'), unique=False, nullable=True)
+    id_current_tile = db.Column(db.Integer, db.ForeignKey('terrainmap.id'), unique=False, nullable=True)
+    guard_stance = db.Column(db.String(15), unique=False, nullable=True)
+    statpack = db.Column(db.String(15), unique=False, nullable=True)
+    max_HP = db.Column(db.Integer, unique=False, nullable=True)
+    current_HP = db.Column(db.Integer, unique=False, nullable=True)
+    strength = db.Column(db.Integer, unique=False, nullable=True)
+    magic = db.Column(db.Integer, unique=False, nullable=True)
+    skill = db.Column(db.Integer, unique=False, nullable=True)
+    speed = db.Column(db.Integer, unique=False, nullable=True)
+    luck = db.Column(db.Integer, unique=False, nullable=True)
+    defense = db.Column(db.Integer, unique=False, nullable=True)
+    resistance = db.Column(db.Integer, unique=False, nullable=True)
+    movement = db.Column(db.Integer, unique=False, nullable=True)
+    ore = db.Column(db.Integer, unique=False, nullable=True)
+    atk = db.Column(db.Integer, unique=False, nullable=True)
+    hit = db.Column(db.Integer, unique=False, nullable=True)
+    crit = db.Column(db.Integer, unique=False, nullable=True)
+    avo = db.Column(db.Integer, unique=False, nullable=True)
+    ceva = db.Column(db.Integer, unique=False, nullable=True)
     
-@app.route('/map')
-def show_map():
-    return render_template( 'map.html', 
-                            map='1-2.png',
-                            TITLE='Chapter 1-2',
-                            character_list=Characters,
-                            sprite='Anna',
-                            CURRENT=Current,
-                            MAX=Max,
-                            STR=Str,
-                            MAG=Mag,
-                            SKL=Skl,
-                            SPD=Spd,
-                            DEF=Def,
-                            RES=Res,
-                            LCK=Lck,
-                            MOV= Move,
-                            ITEM1=Item1,
-                            ITEM2=Item2,
-                            ITEM3=Item3,
-                            ITEM4=Item4,
-                            ITEM5=Item5,
-                            ACC=Accessory,
-                            ATK=Atk,
-                            HIT=Hit,
-                            CRIT=Crit,
-                            AVO=Avo,
-                            CEVA=CEva,
-                            SKILL1=Skill1,
-                            SKILL2=Skill2,
-                            SKILL3=Skill3,
-                            SKILL4=Skill4,
-                            SKILL5=Skill5,
-                            SKILL6=Skill6,
-                            SKILL7=Skill7,
-                            SKILL8=Skill8,
-                            ROW=Row,
-                            COL=Column,
-                            STATPACK=Statpack,
-                            PNG='TRUE',
-                            terrain_list=[])
-                            
-                            
-@app.route('/gaiden')
-def show_gaiden():
-    return render_template( 'map.html', 
-                            map='1x.png',
-                            TITLE='Chapter 1x',
-                            character_list=GCharacters,
-                            sprite=GClass,
-                            CURRENT=GCurrent,
-                            MAX=GMax,
-                            STR=GStr,
-                            MAG=GMag,
-                            SKL=GSkl,
-                            SPD=GSpd,
-                            DEF=GDef,
-                            RES=GRes,
-                            LCK=GLck,
-                            MOV=GMove,
-                            ITEM1=GItem1,
-                            ITEM2=GItem2,
-                            ITEM3=GItem3,
-                            ITEM4=GItem4,
-                            ITEM5=GItem5,
-                            ACC=GAccessory,
-                            ATK=GAtk,
-                            HIT=GHit,
-                            CRIT=GCrit,
-                            AVO=GAvo,
-                            CEVA=GCEva,
-                            SKILL1=GSkill1,
-                            SKILL2=GSkill2,
-                            SKILL3=GSkill3,
-                            SKILL4=GSkill4,
-                            SKILL5=GSkill5,
-                            SKILL6=GSkill6,
-                            SKILL7=GSkill7,
-                            SKILL8=GSkill8,
-                            ROW=GRow,
-                            COL=GColumn,
-                            STATPACK=GStatpack,
-                            PNG=Gis_PNG,
-                            terrain_list=Gterrain_list)
-                            
-                            
-@app.route('/foggaiden')
-def show_fog():
-    return render_template( 'map.html', 
-                            map='1-1x rescaled.png',
-                            TITLE='Chapter 1-2x',
-                            character_list=FCharacters,
-                            sprite=FClass,
-                            CURRENT=FCurrent,
-                            MAX=FMax,
-                            STR=FStr,
-                            MAG=FMag,
-                            SKL=FSkl,
-                            SPD=FSpd,
-                            DEF=FDef,
-                            RES=FRes,
-                            LCK=FLck,
-                            MOV=FMove,
-                            ITEM1=FItem1,
-                            ITEM2=FItem2,
-                            ITEM3=FItem3,
-                            ITEM4=FItem4,
-                            ITEM5=FItem5,
-                            ACC=FAccessory,
-                            ATK=FAtk,
-                            HIT=FHit,
-                            CRIT=FCrit,
-                            AVO=FAvo,
-                            CEVA=FCEva,
-                            SKILL1=FSkill1,
-                            SKILL2=FSkill2,
-                            SKILL3=FSkill3,
-                            SKILL4=FSkill4,
-                            SKILL5=FSkill5,
-                            SKILL6=FSkill6,
-                            SKILL7=FSkill7,
-                            SKILL8=FSkill8,
-                            ROW=FRow,
-                            COL=FColumn,
-                            STATPACK=FStatpack,
-                            PNG=Fis_PNG,
-                            terrain_list=[])
-                            
-@app.errorhandler(404)
-def page_not_found(error):
-    return "Sorry, we don't have a page like that here."
+    items = db.relationship('Item', secondary=inventory, backref='characters')
+    skills = db.relationship('Skill', secondary=CharacterSkill, backref='characters')    
+
+    
+from views import *
+
+                        
+if __name__ == "__main__":                        
+    app.run(debug=True)

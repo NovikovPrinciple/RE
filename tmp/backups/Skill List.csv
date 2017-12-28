@@ -1,0 +1,178 @@
+Name,Description
+Aegis,"(Skill) Halve damage taken from Tomes, Knives, and Bows."
+Aether,(Skill/2) Perform Sol and Luna in succession.
+Aggressor,"During player phase, grants Atk+7."
+Air Superiority,Grants +30 hit and avoid against flying units.
+Amaterasu,"At the start of the player phase, restore HP to all allies within 2 tiles by 20% of their max HP."
+Armored Blow,Grants +15 Defense during player phase.
+Astra,(Skill/2) Strike five times at half damage.
+Awakening,"When HP is under half, grants +20 Hit, Critical, Avoid, and Critical Evade."
+Axebreaker,Grants +50 hit and avoid against Axes.
+Axefaire,Grants +5 Atk when wielding an Axe/Club.
+Ballistician,Extends the maximum range of the user's equipped bow weapon to 10
+Beastbane,Grants effective damage vs Beast units. (x2)
+Better Odds,Increases Defense by 8 on odd numbered turns.
+Bloody Sacrifice,(Command) Deal up to Luck/3 additional damage and lose that much damage for each attack. Cannot lose more HP than current HP.
+Bowbreaker,Grants +50 hit and avoid against Bows.
+Bowfaire,Grants +5 Atk when wielding a Bow/Yumi.
+Camaraderie,"Restores 15% of max HP when within 2 spaces of an ally, or when paired up."
+Careful Encouragement,Allies within 2 tiles and the user gain +1 Defense and Resistance.                                                                                 
+Certain Blow,Grants +40 hit during player phase.
+Charisma,Allies within 2 tiles are granted Hit and Crit +8.
+Charm,Allies within 2 tiles and the are granted Avoid and Crit Evade +8.
+Clarity,"Debuffs restore completely at the start of Player Phase, even self inflicted debuffs"
+Close Counter,This unit can counter attack when attacked at 1-2 range regardless off the equipped weapon.
+Counter,Returns 1/2 the damage dealt against range 1 physical attacks.
+Countermagic,Returns 1/2 the damage dealt by magical attacks.
+Curse,"When attacking, the opponent can't activate offensive or defensive proc skills."
+Darting Blow,Doubling threshold is -5 when initiating combat.
+Dash,+2 Mov
+Death Blow,Grants +20 crit on player phase.
+Defender,"Grants +1 to all stats when paired up. Applies to lead unit when in back of guard stance, and when leading in a pair up."
+Defense +,Grants +2 Def.
+Demoiselle,All male units within 2 spaces have +2 Def and Res.
+Dismantle,"Grants effective damage against Monsters, Automatons, Golems, and other Mechanists."
+Gentilhomme,All female units within 2 spaces have +2 Def and Res.
+Draconic Hex,"After any battle against a unit with this skill, if the enemy survived the battle, they receive -4 to all stats."
+Dragon Ward,(Luck*0.5) User has a chance of receiving half damage from enemy attacks.
+Dual Guarder,"When in Dual Guard, generate 1 more shield than usual per action."
+Dual Striker,"When supporting, damage +3."
+Duelist Blow,Grants +30 Avoid on player phase.
+Duelist Riposte,+15 Avoid on EP
+Elbow Room,Grants +3 Atk on no-effect terrain.
+Eminent Domain,Accelerate special charges by 10% everytime they would charge
+Evasive Maneuvers,Grants avoid +15
+Even Better,Increases Resistance by 8 on even numbered turns.
+Even Keel,Grants +4 Res on even numbered turns.
+Evenhanded,Increases Atk by 3 on even numbered turns.
+Expertise,Unit gains +4 damage when they have WTA against an enemy.
+Exploit,Damage dealt +2 and damage taken -2 against debuffed enemies.
+Forceful Encouragement,Allies within 2 tiles and the user gain +1 Strength and Magic.
+Future Sight,Immune to critical hits when initiating combat. +5 Critical Evade during enemy phase.
+Galeforce,(Skill/2) Take another movement and action. Only builds on Player Phase
+Gamble,"(Command) -20 hit, +20 crit. Lasts until next Player Phase."
+Good Fortune,(Luck) Restores 25% of max HP at the start of the player phase.
+Grisly Wound,"After combat, deal damage equal to 20% of opponent's max HP."
+Hard Fighter,This unit cannot double nor be doubled while it has at least 50% of its max HP
+Heartseeker,Adjacent enemies have -20 Avoid.
+HP +,Grants +5 HP.
+Ignis,(Skill*0.75) Add half of Str or Mag to Atk.
+Immobilize,"If user's attack connects with the enemy, the enemy's Movement is reduced to 0 and Avoid reduced by 20 until the next turn."
+Incense Burner,"While under the effect of a Tonic, it's benefit also affects any friendly units within 2 tiles."
+Ineffable,This unit is immune to negative stat changes of any source.
+Inevitable End,Stat reduction effects on the enemy will stack.
+Inspiration,"All allies within 2 tiles have +2 Atk, Def, and Res."
+Inspiring Song,"Units refreshed by the Singer gain +3 Skill, Speed, and +6 Luck for 1 turn."
+Iron Will,Grants +4 Res during enemy phase.
+Lancebreaker,Grants +50 hit and avoid against Lances.
+Lancefaire,Grants +5 Atk when wielding a Lance/Naginata.
+Lethality,(Skill/4) Instantly defeat enemy.
+Lifetaker,"After defeating an enemy, restore HP equal to 50% of total HP."
+Limit Breaker,Increases maximum stat caps by 10.
+Line of death,"(Command) Increase Strength and Magic by 7, and reduce Defense and Resistance by 7. Both stats restore to normal at the standard debuff rate."
+Live To Serve,"When healing with a staff, restore own HP equal to damage healed."
+Locktouch,Able to open doors and chests.
+Luck +,Grants +4 Lck.
+Lucktaker,"After ending a battle as the primary unit in player or enemy phase, gain +1 luck. Caps at +12. Unit starts at +4 luck."
+Lucky Seven+,Grants to user +7 to their 7 non-hp stats for the first 7 turns.
+Luna,(Skill*0.75) Negates half of enemy's Defense and Resistance.
+Lunge,"(Command) After attacking, swap to any space adjacent to your opponent, or trade spaces with your opponent."
+Magic +,Grants +2 Mag.
+Magnanime,Grants allies within two spaces +2 Res/Def
+Malefic Aura,Enemies within 2 spaces have -2 Res.
+Marshalling,"When this unit uses the 'Refresh' skill, it affects all allied units within 2 tiles."
+Mastery,"The user always has WTA, except against weapon types removed from the Weapons Triangle"
+Miracle,(Luck*2) Survive a lethal blow with 1 HP remaining. Cannot activate if at 1 HP.
+Movement +,Grants +1 Mov.
+Multiscale,Damage reduced by 2 against an enemy with full health. Applies only during enemy phase.
+Natural Cover,Grants +3 Defense/Resistance when fighting on terrain with terrain bonuses.
+Odd Shaped,Increases Atk by 3 on odd numbered turns.
+Omen,Extends the maximum range of the user's equipped tome weapon to 10
+Parry,Gain +10 atk when attacked
+Pas de Meulage,Battles with this unit do not grant EXP/WEXP/Ore and any Support Points gained in battes with this unit are voided.
+Pass,Allows movement through enemy units. Deal 20% Max Health damage to every enemy unit passed through.
+Pavise,"(Skill) Halve damage taken from Swords, Lances, Axes, and Beaststones."
+Point Blank,Lowers the minimum range of the user's equipped bow weapon to 1
+Poison Strike,"After initiating combat, deal damage equal to 20% of opponents max HP."
+Potent Potion,Restoratives and tonics effects are increased by 2x when used on self. Allows use of restoratives and tonics on adjacent allies.
+Preparation,"After choosing to wait, Speed +2 and Defense +2 until next turn."
+Profiteer,Unit earns (Luck at the start of Turn 1)*2% bonus to all gold earned during the chapter.
+Quick Salve,Applying restoratives and tonics is only a free action.
+Quick Draw,Grants +4 Atk during player phase.
+Quixotic,(Command) Skill activation rates are increased by +15% for both primary player and enemy unit.
+Quixotic+,(Always) Skill activation rates are increased by +15% for both primary player and enemy unit.
+Rally Defense,Grants all allies within 2 tiles +4 Defense for one turn.
+Rally Luck,Grants all allies within 2 tiles +8 Luck for one turn.
+Rally Magic,Grants all allies within 2 tiles +4 Magic for one turn.
+Rally Movement,Grants all allies within 2 tiles +2 Movement for one turn.
+Rally Resistance,Grants all allies within 2 tiles +4 Resistance for one turn.
+Rally Skill,Grants all allies within 2 tiles +6 Skill for one turn.
+Rally Spectrum,Grants all allies within 2 tiles +2 to all stats (other than Movement) for one turn.
+Rally Speed,Grants all allies within 2 tiles +4 Speed for one turn.
+Rally Strength,Grants all allies within 2 tiles +4 Strength for one turn.
+Refresh,Allows one adjacent unit to regain their turn.
+Rejuvenation,"Able to combine the use of a Heal, Mend, Restore, Bloom Festal or Sun Festal with Refreshing."
+Relief,Restores 25% of max HP when no allied units are within 2 spaces.
+Rend Heaven,(Skill*1.25) Add half of opponents Str or Mag to Atk.
+Renewal,Restores 25% of total HP during the start of player phase.
+Replicate,Create replica avatar with identical stats and items to user. Consumes turn. Max one. EXP gained by the replica is granted to its user. Unit shares HP with Replica. Can deconstruct Replica as a free action while adjacent.
+Resistance +,Grants +2 Res.
+Savage Blow,Deals damage to all enemies within 2 tiles (of user) equal to 20% of their max HP after initiating combat.
+Savage Riposte,Deals damage to all enemies within 2 tiles (of user) equal to 20% of their max HP after being attacked.
+Seal Defence,Reduces opponent's Def by 6 after battle.
+Seal Luck,"Reduces opponent's Luck by 12 after battle. The debuff recovers at 2/turn, rather than 1/turn."
+Seal Magic,Reduces opponent's Magic by 6 after battle.
+Seal Power,Reduces opponents Strength and Magic by 6 after battle.
+Seal Precision,Reduces opponent's Skill by 8 and Luck by 8 after battle.
+Seal Resistance,Reduces opponent's Res by 6 after battle.
+Seal Skill,Reduces opponent's Skill by 9 after battle.
+Seal Speed,Reduces opponent's Speed by 6 after battle.
+Seal Strength,Reduces opponent's Strength by 6 after battle.
+Shadow Strike,(Skill) Strike one more time after the the last round of combat.
+Shelter,Force an adjacent allied unit to Pair Up with you.
+Shielding Riposte,Take -2 damage when attacked
+Shurikenbreaker,Grants +50 hit and avoid against Shurikens.
+Shurikenfaire,Grants +5 Atk when wielding a Knife/Shuriken.
+Skill +,Grants +3 Skl.
+Skilltaker,"After ending a battle as the primary unit in player or enemy phase, gain +1 skill. Caps at +10. Unit starts at +2 skill."
+Sol,(Skill) Restores HP equal to half damage dealt.
+Solidarity,Grants adjacent allies and any paired up unit Avoid and Critical Evade +15.
+Soulfire,(Skl*0.75) Add half of current HP to Atk.
+Speed +,Grants +2 Spd.
+Speedtaker,"After ending a battle as the primary unit in player or enemy phase, gain +1 speed. Caps at +8."
+Staff-faire,"Grants +1 Range to all staves/rods, +5 HP healed, and +10 hit"
+Strength +,Grants +2 Str.
+Strong Riposte,Grants +3 Atk on enemy phase.
+Subtle Encouragement,Allies within 2 tiles and the user gain +1 Speed.
+Swap,"(Command) Swap places with an adjacent friendly unit. Can be used multiple times in a row, with each time after the first costing 1 Mov. Can use any action after swapping, besides attacking."
+Swordbreaker,Grants +50 hit and avoid against Swords.
+Swordfaire,Grants +5 Atk when wielding a Sword/Katana.
+Tactical Advice,"When supporting, grants Hit +20 to primary and secondary unit. "
+Temore's Shield,Negates flier weakness.
+Tomebreaker,Grants +50 hit and avoid against Tomes.
+Tomefaire,Grants +5 Atk when wielding a Tome/Scroll.
+Toss,"(Command) Throw a friendly unit away up to Str/6 tiles away. Units cannot be thrown through tiles no unit can cross. Unit must land on viable, empty tile."
+Trample,Damage +4 against unmounted units.
+Underdog,Grants +15 Hit/Avo when unit's level below enemy Level. +5 Hit/Avo when unit's level equal to enemy level.
+Vantage,"When under half HP, always strike first."
+Vengeance,(Skill*1.5) Add half of current missing HP to Atk.
+Veteran's Intuition,Grants +15 Critical Evade.
+Voice Of Peace,Enemy units within 2 spaces have -2 Str/Mag/Def/Res.
+Vulnerability,"When there are no units within 2 tiles that act in the same phase as the target, damage dealt +5."
+Warding Blow,Grants +15 Resistance during player phase.
+Warp,Warp adjacent to an ally within a range of [Mag/3] spaces away. Replaces this unit's move action.
+Wary Fighter,(Command) User cannot double and cannot be doubled. Lasts until the beginning of the next Player Phase
+Witch's Brew,Each stat has a (base luck)% chance to be toniced at the beginning of the chapter.
+Wings of Mercy,Warp adjacent to an ally under 50% within a range of [Lck/2] spaces away. Replaces this unit's move action.
+Wyrmsbane,Grants effective damage against dragon units (x2).
+Certain Riposte,60 to hit when attacked
+Lifetaker+,Ask Appa
+Warding Riposte,Ask the GM
+Armored Riposte,Just ask Appa
+Hone Armor,I don't know
+Goad Armor,I really don't know
+Guidance,Not the D&D spell
+Quick Riposte,Unknown
+Nihil,Exactly what you expect
+Fortune,Not quite sure what this is
+Ward Armor,Like Warding Riposte
